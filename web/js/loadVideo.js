@@ -20,7 +20,7 @@ function loadVideo() {
                 // Display the file by appending it to the DOM. Supports video, audio, images, and
                 // more. Specify a container element (CSS selector or reference to DOM node).
                 alert(file.toString());
-                file.appendTo('body');
+                file.appendTo('span');
             })
         })
     }

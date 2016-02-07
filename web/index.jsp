@@ -38,5 +38,14 @@
     <input id="uri" type="url" placeholder="Insert a Magnet URI here .."/>
     <button onclick="loadVideo()"> Load Video </button>
 
+    <br>
+    <br>
+    <span id="video" style="background-color: dimgray">
+      Video will go here :
+      <br>
+    </span>
+
+    <br>
+
   </body>
 </html>
