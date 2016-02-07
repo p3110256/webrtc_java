@@ -13,9 +13,12 @@
     <title>Index Page</title>
   </head>
 
+
+
   <body>
 
-    Enter a Magnet URI below to start streaming a video from WebTorrent.
+
+    Enter a Magnet URI below to start streaming a video from WebTorrent...
 
     <br>
     <br>
