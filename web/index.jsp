@@ -1,16 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: a.polichronopoulos
-  Date: 02-Feb-16
-  Time: 22:25
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Video 1</title>
+    <title>Texnologia Polumeswn</title>
     <!--// Stylesheets //-->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
@@ -36,17 +29,6 @@
     <!-- Header -->
     <div id="masthead">
 
-        <!-- Navigation -->
-        <%--<div class="navigation">--%>
-        <%--<div id="smoothmenu1" class="ddsmoothmenu">--%>
-        <%--<ul>--%>
-        <%--<li><a href="index.html" class="staticlinks">Stream a WebTorrent</a></li>--%>
-        <%--<li><a href="upload.html" class="staticlinks">Upload a Torrent</a></li>--%>
-        <%--<li><a href="streamTorrent.html" class="staticlinks">Stream a Torrent</a></li>--%>
-        <%--</ul>--%>
-        <%--<div class="clear"></div>--%>
-        <%--</div>--%>
-        <%--</div>--%>
         <nav class="navbar navbar-inverse" style="float:left;">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -84,6 +66,7 @@
     </div>
 </div>
 </body>
+<%--SOME BASIC JAVASCRIPT FUNCTIONALITY--%>
 <script>
 
     $(document).ready(function () {
