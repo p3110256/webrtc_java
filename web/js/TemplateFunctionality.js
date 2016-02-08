@@ -3,18 +3,40 @@
  */
 
 $(document).ready(function () {
-    $('.streamVideo').click(function (e) {
+    //$('#myButton').on('click', function () {
+    //    var input = $('#input').val();
+    //    if (input == null || input == "") {
+    //        alert("Give me a Magnet or Torrent ID to stream for you ;)")
+    //    } else {
+    //        streamVideo(input);
+    //    }
+    //});
+    $("#myStateButton").click(function() {
+        var $btn = $(this);
+        $btn.button('loading');
+        // simulating a timeout
         var input = $('#input').val();
         if (input == null || input == "") {
             alert("Give me a Magnet or Torrent ID to stream for you ;)")
         } else {
             streamVideo(input);
+
         }
     });
+
+    //$('.streamVideo').click(function (e) {
+    //    var input = $('#input').val();
+    //    if (input == null || input == "") {
+    //        alert("Give me a Magnet or Torrent ID to stream for you ;)")
+    //    } else {
+    //        streamVideo(input);
+    //    }
+    //});
 });
 
 function streamVideo(link) {
-    //alert("Function streamVideo received :"+link);
+    var $btn = $(this).button('loading');
+
 
     if (WebTorrent.WEBRTC_SUPPORT) {
         var client = new WebTorrent();
@@ -26,10 +48,15 @@ function streamVideo(link) {
             torrent.files.forEach(function (file) {
                 // Display the file by appending it to the DOM. Supports video, audio, images, and
                 // more. Specify a container element (CSS selector or reference to DOM node).
-                alert("Now Playing link :" + magnetURI);
+                //Append file to body and let themagic begin
                 file.appendTo('#VideoContainer');
+                //UnsetLoading Button after 3 seconds
+                setTimeout(function () {
+                    $('#myStateButton').button('reset');
+                }, 3000);
             })
-        })
+        });
+
     }
     else {
         alert("No WebRTC Support");

@@ -10,14 +10,15 @@
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
 
 
-    <!--// Javascript //-->
+    <!--// Javascript Online//-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
-
+    <%--//Local Scripts--%>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/TemplateFunctionality.js"></script>
-    <%--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>--%>
+    <%--//LocalFonts--%>
+
 </head>
 <body>
 <%--NAVIGATION MENU--%>
@@ -41,7 +42,17 @@
         </div>
     </div>
     <div class="col-md-4">
-        <button type="submit" class="btn btn-primary btn-lg streamVideo" data-target="#myModal">Submit</button>
+        <%--<button type="submit" id="myButton" class="btn btn-primary btn-lg streamVideo"  data-loading-text="Loading..." autocomplete="off">Submit</button>--%>
+        <button type="submit" id="myStateButton" data-complete-text="Done..." class="btn btn-primary btn-lg streamVideo"
+                autocomplete="off">
+            Submit
+        </button>
+        <%--<div class="container">--%>
+            <%--<h3>Animated button</h3>--%>
+            <%--<button class="btn btn-lg btn-warning"><span--%>
+                    <%--class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...--%>
+            <%--</button>--%>
+        <%--</div>--%>
     </div>
     <div class="col-md-4">
         <!-- Button trigger modal -->
@@ -90,7 +101,7 @@
         <div id="copyrights">
             <div class="inner">
                 <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis |
-                p3110068@dias.aueb.gr | </h4>
+                    p3110068@dias.aueb.gr | </h4>
                 <a href="info.jsp">Info Page</a>
             </div>
         </div>
