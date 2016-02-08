@@ -54,8 +54,8 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="index.html" class="staticlinks">Stream a WebTorrent</a></li>
-                    <li><a href="upload.html" class="staticlinks">Upload a Torrent</a></li>
-                    <li><a href="streamTorrent.html" class="staticlinks">Stream a Torrent</a></li>
+                    <li><a href="upload.jsp" class="staticlinks">Upload a Torrent</a></li>
+                    <li><a href="streamTorrent.jsp" class="staticlinks">Stream a Torrent</a></li>
                 </ul>
             </div>
         </nav>
