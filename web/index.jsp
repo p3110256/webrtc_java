@@ -3,15 +3,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Texnologia Polumeswn</title>
-    <!--// Stylesheets //-->
-    <%--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">--%>
-    <%--<link href="css/style.css" rel="stylesheet" type="text/css"/>--%>
-    <%--<link href="css/ddsmoothmenu.css" rel="stylesheet" type="text/css"/>--%>
-    <%--<link href="css/scrollbar.css" rel="stylesheet" type="text/css"/>--%>
-    <%--&lt;%&ndash;//getskeleton&ndash;%&gt;--%>
-    <%--<link href="css/skeleton.css" rel="stylesheet" type="text/css"/>--%>
-    <%--<link href="css/normalize.css" rel="stylesheet" type="text/css"/>--%>
-
 
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -50,37 +41,37 @@
         </div>
     </div>
     <div class="col-md-4">
-        <button type="submit" class="btn btn-primary btn-lg streamVideo"data-target="#myModal">Submit</button>
+        <button type="submit" class="btn btn-primary btn-lg streamVideo" data-target="#myModal">Submit</button>
     </div>
     <div class="col-md-4">
         <!-- Button trigger modal -->
         <%--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">--%>
-            <%--Launch demo modal--%>
+        <%--Launch demo modal--%>
         <%--</button>--%>
     </div>
 </div>
 <%--<!-- Modal -->--%>
 <%--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">--%>
-    <%--<div class="modal-dialog" role="document">--%>
-        <%--<div class="modal-content">--%>
-            <%--<div class="modal-header">--%>
-                <%--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>--%>
-                <%--<h4 class="modal-title" id="myModalLabel">Modal title</h4>--%>
-            <%--</div>--%>
-            <%--<div class="modal-body">--%>
-                <%--...--%>
-            <%--</div>--%>
-            <%--<div class="modal-footer">--%>
-                <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
-                <%--<button type="button" class="btn btn-primary">Save changes</button>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
+<%--<div class="modal-dialog" role="document">--%>
+<%--<div class="modal-content">--%>
+<%--<div class="modal-header">--%>
+<%--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>--%>
+<%--<h4 class="modal-title" id="myModalLabel">Modal title</h4>--%>
+<%--</div>--%>
+<%--<div class="modal-body">--%>
+<%--...--%>
+<%--</div>--%>
+<%--<div class="modal-footer">--%>
+<%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
+<%--<button type="button" class="btn btn-primary">Save changes</button>--%>
+<%--</div>--%>
+<%--</div>--%>
+<%--</div>--%>
 <%--</div>--%>
 
 <div class="jumbotron">
     <div class="container">
-        <div class="VideoContainer" id ="VideoContainer">
+        <div class="VideoContainer" id="VideoContainer">
             <h1>Here we are going to place our Video</h1>
         </div>
     </div>
@@ -101,21 +92,15 @@
 </body>
 <%--SOME BASIC JAVASCRIPT FUNCTIONALITY--%>
 <script>
-
     $(document).ready(function () {
         $('.streamVideo').click(function (e) {
             var input = $('#input').val();
-            if (input == null || input=="") {
+            if (input == null || input == "") {
                 alert("Give me a Magnet or Torrent ID to stream for you ;)")
             } else {
                 streamVideo(input);
             }
         });
-//
-//        $('#myModal').on('shown.bs.modal', function () {
-//            $('#myInput').focus()
-//        })
-
     });
 
     function streamVideo(link) {
@@ -134,7 +119,6 @@
                     // more. Specify a container element (CSS selector or reference to DOM node).
                     alert(file.toString());
                     file.appendTo('#VideoContainer');
-//                    file.appendTo('.VideoContainer');
                 })
             })
         }
