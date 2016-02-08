@@ -74,6 +74,8 @@
             var input = $('#input').val();
             if (input != null) {
                 streamVideo(input);
+            }else{
+                alert("Give me a Magnet or Torrent ID to stream for you ;)")
             }
         });
 
