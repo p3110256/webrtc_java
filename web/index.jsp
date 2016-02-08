@@ -85,46 +85,18 @@
     background-color: #eee;
     margin-bottom: 0px;">
     <div class="container">
-        <p>Created by: Alex Polychronopoulos && Kamperis Marios</p>
-        <a href="#">Learn More</a>
+        <div class="clear"></div>
+        `
+        <div id="copyrights">
+            <div class="inner">
+                <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis |
+                p3110068@dias.aueb.gr | </h4>
+                <a href="info.jsp">Info Page</a>
+            </div>
+        </div>
     </div>
 </div>
 </body>
 <%--SOME BASIC JAVASCRIPT FUNCTIONALITY--%>
-<script>
-    $(document).ready(function () {
-        $('.streamVideo').click(function (e) {
-            var input = $('#input').val();
-            if (input == null || input == "") {
-                alert("Give me a Magnet or Torrent ID to stream for you ;)")
-            } else {
-                streamVideo(input);
-            }
-        });
-    });
 
-    function streamVideo(link) {
-        //alert("Function streamVideo received :"+link);
-
-        if (WebTorrent.WEBRTC_SUPPORT) {
-            var client = new WebTorrent();
-            var magnetURI = link;
-            alert("Received link :" + magnetURI);
-            client.add(magnetURI, function (torrent) {
-                // Got torrent metadata!
-                console.log('Client is downloading:', torrent.infoHash);
-
-                torrent.files.forEach(function (file) {
-                    // Display the file by appending it to the DOM. Supports video, audio, images, and
-                    // more. Specify a container element (CSS selector or reference to DOM node).
-                    alert(file.toString());
-                    file.appendTo('#VideoContainer');
-                })
-            })
-        }
-        else {
-            alert("No WebRTC Support");
-        }
-    }
-</script>
 </html>

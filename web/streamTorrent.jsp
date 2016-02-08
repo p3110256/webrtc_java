@@ -85,8 +85,19 @@
     background-color: #eee;
     margin-bottom: 0px;">
   <div class="container">
-    <p>Created by: Alex Polychronopoulos && Kamperis Marios</p>
-    <a href="#">Learn More</a>
+    <div class="clear"></div>`
+    <div id="copyrights">
+      <div class="inner">
+        <span>
+            <span>Copyright 2015 | </span>
+            <span>Alexandros Polichronopoulos | </span>
+            <span>p3110256@dias.aueb.gr | </span>
+            <span>Marios Kamperis | </span>
+            <span>p3110068@dias.aueb.gr  | </span>
+            <a href="info.jsp">Info Page</a>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 </body>
