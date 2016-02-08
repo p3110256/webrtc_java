@@ -6,61 +6,80 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Video 1</title>
+    <!--// Stylesheets //-->
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/ddsmoothmenu.css" rel="stylesheet" type="text/css"/>
+    <link href="css/scrollbar.css" rel="stylesheet" type="text/css"/>
+    <!--// Javascript //-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+<span class="biglines">&nbsp;</span>
+<!-- Wrapper -->
+<div id="wrapper_sec">
+    <!-- Top Section -->
+    <div class="top_sec">
 
-  <script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
-  <head>
-    <title>Index Page</title>
-  </head>
-
-  <body>
-
-    Enter a Magnet URI below to start streaming a video from WebTorrent.
-
-    <br>
-    <br>
-    <div>
-      <a href="video.html">Stream a video</a>
     </div>
-    <br>
-    <div>
-      <a href="upload.html">Seed a video</a>
+    <div class="clear"></div>
+    <!-- Header -->
+    <div id="masthead">
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <div id="smoothmenu1" class="ddsmoothmenu">
+                <ul>
+                    <li><a href="index.html" class="staticlinks">Stream a WebTorrent</a></li>
+                    <li><a href="upload.html" class="staticlinks">Upload a Torrent</a></li>
+                    <li><a href="streamTorrent.html" class="staticlinks">Stream a Torrent</a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!-- Search -->
+        <div class="search">
+            <a class="go" id="start_streaming">&nbsp;</a>
+            <a class="hintClass">
+                <input class="bar" type="text" value="Enter a Magnet link" id="searchBox" name="magnet_value" />
+                <%--<div> show only when you over</div>--%>
+            </a>
+        </div>
     </div>
-    <br>
+    <div class="clear"></div>
+    <!-- Banner -->
+    <div id="banner">
+        <div id="slider2" class="leftsecbanner">
+            <div class="contentdiv">
+                <%--<object type="application/x-shockwave-flash" style="width:660px; height:348px;"--%>
+                <%--data="http://www.youtube.com/v/yd8jh9QYfEs?fs=1&amp;hl=en_US&amp;rel=0">--%>
+                <%--<param name="movie" value="http://www.youtube.com/v/yd8jh9QYfEs?fs=1&amp;hl=en_US&amp;rel=0"/>--%>
+                <%--<param value="application/x-shockwave-flash" name="type"/>--%>
+                <%--<param value="true" name="allowfullscreen"/>--%>
+                <%--<param value="always" name="allowscriptaccess"/>--%>
+                <%--<param value="opaque" name="wmode"/>--%>
+                <%--</object>--%>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div id="copyrights">
+    <div class="inner">
+        <p>Created by Alex Polycronopoulos & Kamperis Marios.</p>
 
+    </div>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $('')
 
-
-    <script>
-      function loadVideo() {
-
-        if ( WebTorrent.WEBRTC_SUPPORT ) {
-          var client = new WebTorrent();
-//          var magnetURI = 'magnet:?xt=urn:btih:ff1bb246fe27e403bd6cafd0c07b11cbf3cdc968&dn=Heroes.Reborn.S01E12.HDTV.x264-KILLERS%5Bettv%5D.mp4&tr=udp%3A%2F%2Fexodus.desync.com%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.webtorrent.io'
-
-          var magnet
-          var magnetURI = document.getElementById("uri").value;
-          alert(magnetURI);
-          client.add(magnetURI, function (torrent) {
-            // Got torrent metadata!
-            console.log('Client is downloading:', torrent.infoHash);
-
-            torrent.files.forEach(function (file) {
-              // Display the file by appending it to the DOM. Supports video, audio, images, and
-              // more. Specify a container element (CSS selector or reference to DOM node).
-              alert(file.toString());
-              file.appendTo('body');
-            })
-          })
-        }
-        else {
-          // fallback
-          alert("not ok");
-        }
-      }
-    </script>
-
-    <input id="uri" type="url" placeholder="Insert a Magnet URI here .."/>
-    <button onclick="loadVideo()"> Load Video </button>
-
-  </body>
+    });
+</script>
 </html>
