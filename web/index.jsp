@@ -12,11 +12,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Video 1</title>
     <!--// Stylesheets //-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
     <link href="css/ddsmoothmenu.css" rel="stylesheet" type="text/css"/>
     <link href="css/scrollbar.css" rel="stylesheet" type="text/css"/>
     <!--// Javascript //-->
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.1.4.2.js"></script>
+    <script type="text/javascript" src="js/TemplateFunctionality.js"></script>
+    <script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
 <span class="biglines">&nbsp;</span>
@@ -31,39 +37,41 @@
     <div id="masthead">
 
         <!-- Navigation -->
-        <div class="navigation">
-            <div id="smoothmenu1" class="ddsmoothmenu">
-                <ul>
-                    <li><a href="index.html" class="staticlinks">Stream a WebTorrent</a></li>
+        <%--<div class="navigation">--%>
+        <%--<div id="smoothmenu1" class="ddsmoothmenu">--%>
+        <%--<ul>--%>
+        <%--<li><a href="index.html" class="staticlinks">Stream a WebTorrent</a></li>--%>
+        <%--<li><a href="upload.html" class="staticlinks">Upload a Torrent</a></li>--%>
+        <%--<li><a href="streamTorrent.html" class="staticlinks">Stream a Torrent</a></li>--%>
+        <%--</ul>--%>
+        <%--<div class="clear"></div>--%>
+        <%--</div>--%>
+        <%--</div>--%>
+        <nav class="navbar navbar-inverse" style="float:left;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Torrs</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html" class="staticlinks">Stream a WebTorrent</a></li>
                     <li><a href="upload.html" class="staticlinks">Upload a Torrent</a></li>
                     <li><a href="streamTorrent.html" class="staticlinks">Stream a Torrent</a></li>
                 </ul>
-                <div class="clear"></div>
             </div>
-        </div>
-        <!-- Search -->
-        <div class="search">
-            <a class="go" id="start_streaming">&nbsp;</a>
-            <a class="hintClass">
-                <input class="bar" type="text" value="Enter a Magnet link" id="searchBox" name="magnet_value" />
-                <%--<div> show only when you over</div>--%>
-            </a>
-        </div>
+        </nav>
+
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                <input type="text" class="form-control" id="input" placeholder="Enter Magnet/Torrent ID">
+            </div>
+            <button type="submit" class="btn btn-primary streamVideo">Submit</button>
+        </form>
     </div>
     <div class="clear"></div>
     <!-- Banner -->
     <div id="banner">
-        <div id="slider2" class="leftsecbanner">
-            <div class="contentdiv">
-                <%--<object type="application/x-shockwave-flash" style="width:660px; height:348px;"--%>
-                <%--data="http://www.youtube.com/v/yd8jh9QYfEs?fs=1&amp;hl=en_US&amp;rel=0">--%>
-                <%--<param name="movie" value="http://www.youtube.com/v/yd8jh9QYfEs?fs=1&amp;hl=en_US&amp;rel=0"/>--%>
-                <%--<param value="application/x-shockwave-flash" name="type"/>--%>
-                <%--<param value="true" name="allowfullscreen"/>--%>
-                <%--<param value="always" name="allowscriptaccess"/>--%>
-                <%--<param value="opaque" name="wmode"/>--%>
-                <%--</object>--%>
-            </div>
+        <div id="videoContainer">
+
         </div>
     </div>
     <div class="clear"></div>
@@ -79,8 +87,37 @@
 <script>
 
     $(document).ready(function () {
-        $('')
+        $('.streamVideo').click(function (e) {
+            var input = $('#input').val();
+            if (input != null) {
+                streamVideo(input);
+            }
+        });
 
     });
+
+    function streamVideo(link) {
+        //alert("Function streamVideo received :"+link);
+
+        if (WebTorrent.WEBRTC_SUPPORT) {
+            var client = new WebTorrent();
+            var magnetURI = link;
+            alert("Received link :" + magnetURI);
+            client.add(magnetURI, function (torrent) {
+                // Got torrent metadata!
+                console.log('Client is downloading:', torrent.infoHash);
+
+                torrent.files.forEach(function (file) {
+                    // Display the file by appending it to the DOM. Supports video, audio, images, and
+                    // more. Specify a container element (CSS selector or reference to DOM node).
+                    alert(file.toString());
+                    file.appendTo('#videoContainer');
+                })
+            })
+        }
+        else {
+            alert("No WebRTC Support");
+        }
+    }
 </script>
 </html>
