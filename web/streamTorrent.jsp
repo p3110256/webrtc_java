@@ -17,6 +17,11 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/TemplateFunctionality.js"></script>
+    <%--<script type="text/javascript" src="js/torrentstime.js"></script>--%>
+    <script src="//cdn.torrents-time.com/torrentstime.min.js"></script>
+    <script>
+        torrentsTime.init()
+    </script>
 
 </head>
 <body style="background: linear-gradient(#eee, #4d4d4d)">
@@ -46,9 +51,12 @@
                         font-weight: bold;
                         font-family: cursive;
                         font-size: large;">
-                        <li><a href="index.jsp" class="staticlinks" style=" font-size: 120%;">Stream a WebTorrent</a></li>
-                        <li><a href="upload.jsp" class="staticlinks" style=" font-size: 120%;">Upload a WebTorrent</a></li>
-                        <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%; color: whitesmoke">Stream a Torrent</a></li>
+                        <li><a href="index.jsp" class="staticlinks" style=" font-size: 120%; ">Stream a WebTorrent</a>
+                        </li>
+                        <li><a href="upload.jsp" class="staticlinks" style=" font-size: 120%;">Upload a WebTorrent</a>
+                        </li>
+                        <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%; color: whitesmoke">Stream
+                            a Torrent</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class=""></span></a></li>
@@ -62,13 +70,11 @@
     </div>
     <%--SEARCH BAR--%>
     <div class="row">
-        <div class="col-lg-12" >
+        <div class="col-lg-12">
             <div class="form-group">
                 <input type="text" class="form-control" id="input" placeholder="Enter Magnet/Torrent ID"
                        style="
-                        height: 30px;
-                        width: 80%;
-                        margin: auto;
+                        height: 4%;
                         text-align: center;
                         font-weight: bold;
                         font-family: cursive;
@@ -89,14 +95,13 @@
 <div class="body" style="min-height: 75%;">
     <div class="container">
         <div class="message" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
-            <h1 style="text-align: center;
-                        font-weight: bold;
-                        font-family: cursive;">Here we are going to place our Video</h1>
+            <h1>Here we are going to place our Video</h1>
         </div>
 
 
         <div class="VideoContainer" id="VideoContainer"
              style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
+            <div class="torrentsTime" data-setup='{"source": "magnet:?xt=urn:btih:4b3dce31c713b02726f67e2ef49de9ff965ec3b7&dn=Inside+Out+%282015%29+720p+BrRip+x264+-+YIFY&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969'></div>
         </div>
         <div class="VideoInfo" id="VideoInfo">
             <table class="table">
@@ -143,7 +148,8 @@
                 <div class="clear"></div>
                 <div id="copyrights">
                     <div class="inner">
-                        <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis | p3110068@dias.aueb.gr </h4>
+                        <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis |
+                            p3110068@dias.aueb.gr </h4>
                         <a href="info.jsp">Info Page</a>
                     </div>
                 </div>

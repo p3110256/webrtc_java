@@ -46,9 +46,12 @@
                         font-weight: bold;
                         font-family: cursive;
                         font-size: large;">
-                        <li><a href="index.jsp" class="staticlinks" style=" font-size: 120%; ">Stream a WebTorrent</a></li>
-                        <li><a href="upload.jsp" class="staticlinks" style=" font-size: 120%; color: whitesmoke">Upload a WebTorrent</a></li>
-                        <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%;">Stream a Torrent</a></li>
+                        <li><a href="index.jsp" class="staticlinks" style=" font-size: 120%; ">Stream a WebTorrent</a>
+                        </li>
+                        <li><a href="upload.jsp" class="staticlinks" style=" font-size: 120%; color: whitesmoke">Upload
+                            a WebTorrent</a></li>
+                        <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%;">Stream a
+                            Torrent</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class=""></span></a></li>
@@ -135,7 +138,8 @@
                 <div class="clear"></div>
                 <div id="copyrights">
                     <div class="inner">
-                        <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis | p3110068@dias.aueb.gr </h4>
+                        <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis |
+                            p3110068@dias.aueb.gr </h4>
                         <a href="info.jsp">Info Page</a>
                     </div>
                 </div>
