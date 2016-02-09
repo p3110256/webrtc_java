@@ -32,7 +32,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#" style="
+                    <a class="navbar-brand" href="index.jsp" style="
                         /*width: 10%;*/
                         text-align: center;
                         font-size: xx-large !important;
@@ -46,12 +46,9 @@
                         font-weight: bold;
                         font-family: cursive;
                         font-size: large;">
-                        <li><a href="index.jsp" class="staticlinks"
-                                              style=" font-size: 120%;">Stream a WebTorrent</a></li>
-                        <li><a href="upload.jsp" class="staticlinks" style=" font-size: 120%;">Upload a
-                            Torrent</a></li>
-                        <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%;">Stream
-                            a Torrent</a></li>
+                        <li><a href="index.jsp" class="staticlinks" style=" font-size: 120%; color: whitesmoke">Stream a WebTorrent</a></li>
+                        <li><a href="upload.jsp" class="staticlinks" style=" font-size: 120%;">Upload a WebTorrent</a></li>
+                        <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%;">Stream a Torrent</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class=""></span></a></li>
@@ -65,11 +62,13 @@
     </div>
     <%--SEARCH BAR--%>
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12" >
             <div class="form-group">
                 <input type="text" class="form-control" id="input" placeholder="Enter Magnet/Torrent ID"
                        style="
-                        height: 4%;
+                        height: 30px;
+                        width: 80%;
+                        margin: auto;
                         text-align: center;
                         font-weight: bold;
                         font-family: cursive;
