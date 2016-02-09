@@ -3,14 +3,12 @@
  */
 
 $(document).ready(function () {
-    //$('#myButton').on('click', function () {
-    //    var input = $('#input').val();
-    //    if (input == null || input == "") {
-    //        alert("Give me a Magnet or Torrent ID to stream for you ;)")
-    //    } else {
-    //        streamVideo(input);
-    //    }
-    //});
+
+    //Choosing File Logic
+    $('.btn-file :file').on('fileselect', function (event, numFiles, label) {
+        alert("File Name :"+label+"  Number Of Files :"+numFiles);
+        //console.log(label);
+    });
     $("#myStateButton").click(function () {
         var $btn = $(this);
         $btn.button('loading');
@@ -26,17 +24,14 @@ $(document).ready(function () {
 
         }
     });
-
-    //$('.streamVideo').click(function (e) {
-    //    var input = $('#input').val();
-    //    if (input == null || input == "") {
-    //        alert("Give me a Magnet or Torrent ID to stream for you ;)")
-    //    } else {
-    //        streamVideo(input);
-    //    }
-    //});
 });
-
+//For choosing File button
+$(document).on('change', '.btn-file :file', function() {
+    var input = $(this),
+        numFiles = input.get(0).files ? input.get(0).files.length : 1,
+        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    input.trigger('fileselect', [numFiles, label]);
+});
 function streamVideo(link) {
     var $btn = $(this).button('loading');
 
@@ -54,20 +49,21 @@ function streamVideo(link) {
                 //Append file to body and let themagic begin
                 file.appendTo('#VideoContainer');
                 //Set file_size and file_name
-                var file_size =parseInt(file.length);
-                document.getElementById("file_size").innerHTML = humanFileSize(file_size,true);
-                document.getElementById("file_name").innerHTML = file.name;;
+                var file_size = parseInt(file.length);
+                document.getElementById("file_size").innerHTML = humanFileSize(file_size, true);
+                document.getElementById("file_name").innerHTML = file.name;
+                ;
                 //UnsetLoading Button after 3 seconds
                 setTimeout(function () {
                     $('#myStateButton').button('reset');
                 }, 3000);
                 $('#message').hide();
             });
-            document.getElementById("swarm").innerHTML =torrent.swarm;
-            document.getElementById("received").innerHTML =torrent.received;
-            document.getElementById("downloaded").innerHTML =torrent.downloaded;
-            document.getElementById("timeRemaining").innerHTML =torrent.timeRemaining;
-            document.getElementById("downloadSpeed").innerHTML =torrent.downloadSpeed;
+            document.getElementById("swarm").innerHTML = torrent.swarm;
+            document.getElementById("received").innerHTML = torrent.received;
+            document.getElementById("downloaded").innerHTML = torrent.downloaded;
+            document.getElementById("timeRemaining").innerHTML = torrent.timeRemaining;
+            document.getElementById("downloadSpeed").innerHTML = torrent.downloadSpeed;
 
             console.log(torrent.swarm);
             console.log(torrent.received);
@@ -84,16 +80,16 @@ function streamVideo(link) {
 }
 function humanFileSize(bytes, si) {
     var thresh = si ? 1000 : 1024;
-    if(Math.abs(bytes) < thresh) {
+    if (Math.abs(bytes) < thresh) {
         return bytes + ' B';
     }
     var units = si
-        ? ['kB','MB','GB','TB','PB','EB','ZB','YB']
-        : ['KiB','MiB','GiB','TiB','PiB','EiB','ZiB','YiB'];
+        ? ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+        : ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
     var u = -1;
     do {
         bytes /= thresh;
         ++u;
-    } while(Math.abs(bytes) >= thresh && u < units.length - 1);
-    return bytes.toFixed(1)+' '+units[u];
+    } while (Math.abs(bytes) >= thresh && u < units.length - 1);
+    return bytes.toFixed(1) + ' ' + units[u];
 }

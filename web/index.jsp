@@ -33,7 +33,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#" style="
-                        width: 10%;
+                        /*width: 10%;*/
                         text-align: center;
                         font-size: xx-large !important;
                         font-weight: 900;
@@ -62,46 +62,6 @@
                 </div>
             </div>
         </nav>
-
-
-        <%--<nav class="navbar navbar-default">--%>
-        <%--<div class="col-lg-3">--%>
-        <%--<div class="container-fluid">--%>
-        <%--<div class="navbar-header"--%>
-        <%--style="height: 10%;--%>
-        <%--width: 10%;--%>
-        <%--text-align: center;--%>
-        <%--font-size: xx-large !important;--%>
-        <%--font-weight: 900;--%>
-        <%--font-family: cursive;">--%>
-        <%--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">--%>
-        <%--<span class="icon-bar"></span>--%>
-        <%--<span class="icon-bar"></span>--%>
-        <%--<span class="icon-bar"></span>--%>
-        <%--</button>--%>
-        <%--<a class="navbar-brand" href="#" style="font-size: 190%; color:#4d4d4d">Torrs</a>--%>
-        <%--</div>--%>
-        <%--</div>--%>
-        <%--</div>--%>
-        <%--<div class="col-lg-9">--%>
-        <%--<div class="collapse navbar-collapse" id="myNavbar">--%>
-        <%--<ul class="nav navbar-nav" style="height: 4%;--%>
-        <%--text-align: center;--%>
-        <%--font-weight: bold;--%>
-        <%--font-family: cursive;--%>
-        <%--font-size: large;">--%>
-        <%--<li class="active"><a href="index.jsp" class="staticlinks"--%>
-        <%--style="color:#4d4d4d; font-size: 120%;">Stream--%>
-        <%--a WebTorrent</a></li>--%>
-        <%--<li><a href="upload.jsp" class="staticlinks" style="color:#4d4d4d; font-size: 120%;">Upload a--%>
-        <%--Torrent</a></li>--%>
-        <%--<li><a href="streamTorrent.jsp" class="staticlinks" style="color:#4d4d4d; font-size: 120%;">Stream--%>
-        <%--a--%>
-        <%--Torrent</a></li>--%>
-        <%--</ul>--%>
-        <%--</div>--%>
-        <%--</div>--%>
-        <%--</nav>--%>
     </div>
     <%--SEARCH BAR--%>
     <div class="row">
@@ -130,7 +90,9 @@
 <div class="body" style="min-height: 75%;">
     <div class="container">
         <div class="message" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
-            <h1>Here we are going to place our Video</h1>
+            <h1 style="text-align: center;
+                        font-weight: bold;
+                        font-family: cursive;">Here we are going to place our Video</h1>
         </div>
 
 
@@ -172,7 +134,7 @@
     color: #1a1a1a;
     text-align: center;
     padding-top: 10px;
-    margin: -50px auto 0 auto;
+    /*margin: -50px auto 0 auto;*/
     font-weight: bold;
     font-family: cursive;
     font-size: large;">
