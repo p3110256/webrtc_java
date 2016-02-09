@@ -83,7 +83,7 @@
             </div>
         </div>
         <div class="col-md-12" style="text-align: center;">
-            <button type="submit" id="myStateButton" data-complete-text="Done..."
+            <button type="submit" id="myButton" data-complete-text="Done..."
                     class="btn btn-primary btn-lg streamVideo"
                     autocomplete="off">
                 Submit
@@ -101,7 +101,7 @@
 
         <div class="VideoContainer" id="VideoContainer"
              style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
-            <div class="torrentsTime" data-setup='{"source": "magnet:?xt=urn:btih:4b3dce31c713b02726f67e2ef49de9ff965ec3b7&dn=Inside+Out+%282015%29+720p+BrRip+x264+-+YIFY&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969'></div>
+            <%--<div class="torrentsTime" id="torrentsTime" data-setup='{"source": "4"'></div>--%>
         </div>
         <div class="VideoInfo" id="VideoInfo">
             <table class="table">

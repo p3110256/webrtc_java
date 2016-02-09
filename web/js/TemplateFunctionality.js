@@ -24,6 +24,30 @@ $(document).ready(function () {
 
         }
     });
+    $("#myButton").click(function () {
+        var $btn = $(this);
+        $btn.button('loading');
+        // simulating a timeout
+        var input = $('#input').val();
+        if (input == null || input == "") {
+            alert("Give me a Magnet or Torrent ID to stream for you ;)")
+            setTimeout(function () {
+                $('#myStateButton').button('reset');
+            }, 500);
+        } else {
+
+            //<div class="torrentsTime" id="torrentsTime" data-setup='{"source": "4"'></div>
+
+            $( "#VideoContainer" ).append('<div class="torrentsTime" id="torrentsTime" data-setup="{\"source\" : \"'+input+'\"}"></div>');
+
+            //( "#first-tab" ).append('<div><label for="name">Test</label></div>');
+            //$('#torrentsTime').attr('data-setup','{"source": "'+input+'"}');
+            //streamVideo(input);
+            setTimeout(function () {
+                $('#myStateButton').button('reset');
+            }, 500);
+        }
+    });
 });
 //For choosing File button
 $(document).on('change', '.btn-file :file', function () {
