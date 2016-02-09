@@ -16,7 +16,7 @@
     <%--//Local Scripts--%>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/TemplateFunctionality.js"></script>
+    <script type="text/javascript" src="js/uploadFunctionality.js"></script>
 
 </head>
 <body style="background: linear-gradient(#eee, #4d4d4d)">
@@ -60,28 +60,26 @@
             </div>
         </nav>
     </div>
-    <%--SEARCH BAR--%>
+    <%--UPLOAD BOX--%>
     <div class="row">
         <div class="col-lg-12">
             <div class="form-group">
-                <h1 style="text-align: center;
-                        font-weight: bold;
-                        font-family: cursive;">Select a Local File for Upload</h1>
+                <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
+                    Select a Local File for Upload
+                </h1>
             </div>
         </div>
         <div class="col-md-12" style="text-align: center;">
             <%--<input class="btn btn-primary btn-lg uploadVideo"type="file" id="upload" multiple="">--%>
-            <span class="btn btn-default btn-file">Choose a File<input type="file"></span>
+            <span class="btn btn-default btn-file">Choose a File
+                <input type="file" id="uploadfile">
+            </span>
 
-            <%--<button type="file" id="myStateButton" data-complete-text="Done..."--%>
-            <%--class="btn btn-primary btn-lg streamVideo"--%>
-            <%--autocomplete="off">--%>
-            <%--Choose File--%>
-            <%--</button>--%>
         </div>
     </div>
 
 </div>
+
 <div class="body" style="min-height: 75%;">
     <div class="container">
         <div class="message" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
