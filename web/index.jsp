@@ -51,10 +51,9 @@
                         <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%;">Stream a Torrent</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class=""></span></a></li>
+                        <li><a href="index.jsp"><span class=""></span></a></li>
                         <li><a href="upload.jsp"><span class=""></span></a></li>
                         <li><a href="streamTorrent.jsp"><span class=""></span></a></li>
-                        <li><a href="#"><span class=""></span> </a></li>
                     </ul>
                 </div>
             </div>

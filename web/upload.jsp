@@ -17,6 +17,8 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/uploadFunctionality.js"></script>
+    <script src="http://css-tricks.com/examples/TextareaTricks/js/autoresize.jquery.min.js"></script>
+
 
 </head>
 <body style="background: linear-gradient(#eee, #4d4d4d)">
@@ -54,10 +56,9 @@
                             Torrent</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class=""></span></a></li>
+                        <li><a href="index.jsp"><span class=""></span></a></li>
                         <li><a href="upload.jsp"><span class=""></span></a></li>
                         <li><a href="streamTorrent.jsp"><span class=""></span></a></li>
-                        <li><a href="#"><span class=""></span> </a></li>
                     </ul>
                 </div>
             </div>
@@ -119,6 +120,18 @@
                 </tr>
                 </tbody>
             </table>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="form-group">
+                <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
+                    Use this Magnet URI to share the video as a WebTorrent :
+                </h1>
+                <textarea id="videoMagnetURI" disabled="disabled"
+                          style="width: 100%; text-align: center; resize: none"
+                        > No magnet URI </textarea>
+
+            </div>
         </div>
 
     </div>

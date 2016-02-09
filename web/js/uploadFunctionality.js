@@ -5,20 +5,11 @@
 $(document).ready(function () {
 
     //Choosing File Logic
-    $('#uploadfile').on('change', function (event, numFiles, label) {
-        alert("File Name :"+label+"  Number Of Files :"+numFiles);
-        seed($('#uploadfile').get(0).files)
+    $('#uploadfile').on('change', function (e) {
+        seed($(this).get(0).files)
     });
 
 });
-
-////For choosing File button
-//$(document).on('change', '.btn-file :file', function() {
-//    var input = $(this),
-//        numFiles = input.get(0).files ? input.get(0).files.length : 1,
-//        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-//    input.trigger('fileselect', [numFiles, label]);
-//});
 
 
 function seed(files) {
@@ -28,18 +19,39 @@ function seed(files) {
 
     if (WebTorrent.WEBRTC_SUPPORT) {
         var client = new WebTorrent();
-        //client.seed(files, onTorrent);
-        alert("seeding ??");
+        //alert("seeding ??");
         client.seed(files, function (torrent) {
             console.log('Client is seeding ' + torrent.infoHash)
             console.log('Client is seeding ' + torrent.name)
             console.log('Client is seeding ' + torrent.magnetURI)
+
+            $('#file_size').text(humanFileSize(parseInt(torrent.length), true));
+            $('#file_name').text(torrent.name);
+            $('#videoMagnetURI').text(torrent.magnetURI);
+            $('videoMagnetURI').autoResize();
         });
     }
     else {
         alert("No WebRTC Support");
     }
 
+}
+
+
+function humanFileSize(bytes, si) {
+    var thresh = si ? 1000 : 1024;
+    if (Math.abs(bytes) < thresh) {
+        return bytes + ' B';
+    }
+    var units = si
+        ? ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+        : ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
+    var u = -1;
+    do {
+        bytes /= thresh;
+        ++u;
+    } while (Math.abs(bytes) >= thresh && u < units.length - 1);
+    return bytes.toFixed(1) + ' ' + units[u];
 }
 
 //function onTorrent (torrent) {
