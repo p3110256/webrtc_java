@@ -16,7 +16,7 @@ $(document).ready(function () {
         $btn.button('loading');
         // simulating a timeout
         var input = $('#input').val('');
-        input='magnet:?xt=urn:btih:1a8ff368252a2635d4f6340a6c267a52d496ad91&dn=star.wars.rebels.s02e01.the.siege.of.lothal.hdtv.x264-w4f.mp4&tr=udp%3A%2F%2Fexodus.desync.com%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.webtorrent.io';
+
         if (input == null || input == "") {
             alert("Give me a Magnet or Torrent ID to stream for you ;)")
             setTimeout(function () {
