@@ -133,20 +133,17 @@
     color: #1a1a1a;
     text-align: center;
     padding-top: 10px;
-    /*margin: -50px auto 0 auto;*/
     font-weight: bold;
     font-family: cursive;
     font-size: large;">
 
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12" style="margin-bottom: 10px">
             <div class="container">
                 <div class="clear"></div>
                 <div id="copyrights">
                     <div class="inner">
-                        <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis
-                            |
-                            p3110068@dias.aueb.gr | </h4>
+                        <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis | p3110068@dias.aueb.gr </h4>
                         <a href="info.jsp">Info Page</a>
                     </div>
                 </div>
