@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Texnologia Polumeswn</title>
 
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
@@ -23,35 +24,84 @@
 <%--NAVIGATION MENU--%>
 <div class="header">
     <div class="row">
-        <nav class="navbar">
-            <div class="col-lg-3">
-                <div class="container-fluid">
-                    <div class="navbar-header"
-                         style="height: 10%;
-                width: 10%;
-                text-align: center;
-                font-size: xx-large !important;
-                font-weight: 900;
-                font-family: cursive;">
-                        <a class="navbar-brand" href="#" style="font-size: 190%; color:#4d4d4d">Torrs</a>
-                    </div>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#" style="
+                        width: 10%;
+                        text-align: center;
+                        font-size: xx-large !important;
+                        font-weight: 900;
+                        font-family: cursive;
+                    ">Torrs</a>
                 </div>
-            </div>
-            <div class="col-lg-9">
-                <ul class="nav navbar-nav" style="height: 4%;
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav" style="height: 4%;
                         text-align: center;
                         font-weight: bold;
                         font-family: cursive;
                         font-size: large;">
-                    <li class="active"><a href="index.jsp" class="staticlinks" style="color:#4d4d4d; font-size: 120%;">Stream
-                        a WebTorrent</a></li>
-                    <li><a href="upload.jsp" class="staticlinks" style="color:#4d4d4d; font-size: 120%;">Upload a
-                        Torrent</a></li>
-                    <li><a href="streamTorrent.jsp" class="staticlinks" style="color:#4d4d4d; font-size: 120%;">Stream a
-                        Torrent</a></li>
-                </ul>
+                        <li><a href="index.jsp" class="staticlinks"
+                                              style=" font-size: 120%;">Stream a WebTorrent</a></li>
+                        <li><a href="upload.jsp" class="staticlinks" style=" font-size: 120%;">Upload a
+                            Torrent</a></li>
+                        <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%;">Stream
+                            a Torrent</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class=""></span></a></li>
+                        <li><a href="upload.jsp"><span class=""></span></a></li>
+                        <li><a href="streamTorrent.jsp"><span class=""></span></a></li>
+                        <li><a href="#"><span class=""></span> </a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
+
+
+        <%--<nav class="navbar navbar-default">--%>
+        <%--<div class="col-lg-3">--%>
+        <%--<div class="container-fluid">--%>
+        <%--<div class="navbar-header"--%>
+        <%--style="height: 10%;--%>
+        <%--width: 10%;--%>
+        <%--text-align: center;--%>
+        <%--font-size: xx-large !important;--%>
+        <%--font-weight: 900;--%>
+        <%--font-family: cursive;">--%>
+        <%--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">--%>
+        <%--<span class="icon-bar"></span>--%>
+        <%--<span class="icon-bar"></span>--%>
+        <%--<span class="icon-bar"></span>--%>
+        <%--</button>--%>
+        <%--<a class="navbar-brand" href="#" style="font-size: 190%; color:#4d4d4d">Torrs</a>--%>
+        <%--</div>--%>
+        <%--</div>--%>
+        <%--</div>--%>
+        <%--<div class="col-lg-9">--%>
+        <%--<div class="collapse navbar-collapse" id="myNavbar">--%>
+        <%--<ul class="nav navbar-nav" style="height: 4%;--%>
+        <%--text-align: center;--%>
+        <%--font-weight: bold;--%>
+        <%--font-family: cursive;--%>
+        <%--font-size: large;">--%>
+        <%--<li class="active"><a href="index.jsp" class="staticlinks"--%>
+        <%--style="color:#4d4d4d; font-size: 120%;">Stream--%>
+        <%--a WebTorrent</a></li>--%>
+        <%--<li><a href="upload.jsp" class="staticlinks" style="color:#4d4d4d; font-size: 120%;">Upload a--%>
+        <%--Torrent</a></li>--%>
+        <%--<li><a href="streamTorrent.jsp" class="staticlinks" style="color:#4d4d4d; font-size: 120%;">Stream--%>
+        <%--a--%>
+        <%--Torrent</a></li>--%>
+        <%--</ul>--%>
+        <%--</div>--%>
+        <%--</div>--%>
+        <%--</nav>--%>
     </div>
     <%--SEARCH BAR--%>
     <div class="row">
