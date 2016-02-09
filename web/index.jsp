@@ -20,7 +20,7 @@
     <%--//LocalFonts--%>
 
 </head>
-<body>
+<body style="background: linear-gradient(#eee, #4d4d4d)">
 <%--NAVIGATION MENU--%>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -34,70 +34,103 @@
         </ul>
     </div>
 </nav>
+
 <%--SEARCH BAR--%>
 <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-12">
         <div class="form-group">
-            <input type="text" class="form-control" id="input" placeholder="Enter Magnet/Torrent ID">
+            <input type="text" class="form-control" id="input" placeholder="Enter Magnet/Torrent ID"
+                   style="
+                        height: 4%;
+                        text-align: center;
+                        font-weight: bold;
+                        font-family: cursive;
+                        font-size: large;
+                        ">
         </div>
     </div>
-    <div class="col-md-4">
-        <%--<button type="submit" id="myButton" class="btn btn-primary btn-lg streamVideo"  data-loading-text="Loading..." autocomplete="off">Submit</button>--%>
-        <button type="submit" id="myStateButton" data-complete-text="Done..." class="btn btn-primary btn-lg streamVideo"
+
+    <div class="col-md-12" style="text-align: center;">
+        <button type="submit" id="myStateButton" data-complete-text="Done..."
+                class="btn btn-primary btn-lg streamVideo"
                 autocomplete="off">
             Submit
         </button>
-        <%--<div class="container">--%>
-            <%--<h3>Animated button</h3>--%>
-            <%--<button class="btn btn-lg btn-warning"><span--%>
-                    <%--class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...--%>
-            <%--</button>--%>
-        <%--</div>--%>
-    </div>
-    <div class="col-md-4">
-        <!-- Button trigger modal -->
-        <%--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">--%>
-        <%--Launch demo modal--%>
-        <%--</button>--%>
     </div>
 </div>
-<%--<!-- Modal -->--%>
-<%--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">--%>
-<%--<div class="modal-dialog" role="document">--%>
-<%--<div class="modal-content">--%>
-<%--<div class="modal-header">--%>
-<%--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>--%>
-<%--<h4 class="modal-title" id="myModalLabel">Modal title</h4>--%>
-<%--</div>--%>
-<%--<div class="modal-body">--%>
-<%--...--%>
-<%--</div>--%>
-<%--<div class="modal-footer">--%>
-<%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
-<%--<button type="button" class="btn btn-primary">Save changes</button>--%>
-<%--</div>--%>
-<%--</div>--%>
-<%--</div>--%>
-<%--</div>--%>
 
-<div class="jumbotron">
-    <div class="container">
-        <div class="VideoContainer" id="VideoContainer">
-            <h1>Here we are going to place our Video</h1>
-        </div>
+<%--<div class="jumbotron">--%>
+<div class="container">
+    <div class="message" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
+        <h1>Here we are going to place our Video</h1>
     </div>
+
+
+
+    <div class="VideoContainer" id="VideoContainer"
+         style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
+    </div>
+    <div class="VideoInfo" id="VideoInfo">
+        <%--<label>--%>
+            <%--Total Bytes received--%>
+        <%--</label>--%>
+        <%--<a id="bytesReceived">--%>
+            <%--0--%>
+        <%--</a>B--%>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>File Size</th>
+                <th>File name</th>
+                <th>Swarm</th>
+                <th>Received</th>
+                <th>Downloaded</th>
+                <th>Time Remaining</th>
+                <th>Progress</th>
+                <th>Download Speed</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td id="file_size"></td>
+                <td id="file_name"></td>
+                <td id="swarm"></td>
+                <td id="received"></td>
+                <td id="downloaded"></td>
+                <td id="timeRemaining"></td>
+                <td id="downloadSpeed"></td>
+            </tr>
+            <%--<tr>--%>
+                <%--<td>Mary</td>--%>
+                <%--<td>Moe</td>--%>
+                <%--<td>mary@example.com</td>--%>
+            <%--</tr>--%>
+            <%--<tr>--%>
+                <%--<td>July</td>--%>
+                <%--<td>Dooley</td>--%>
+                <%--<td>july@example.com</td>--%>
+            <%--</tr>--%>
+            </tbody>
+        </table>
+    </div>
+
 </div>
+<%--</div>--%>
 
 <div class="jumbotron" style="
     position: absolute;
     width: 100%;
     bottom: 0;
     padding-bottom: 0px;
-    background-color: #eee;
-    margin-bottom: 0px;">
+    background-color: #4d4d4d;
+    margin-bottom: 0px;
+    text-align: center;
+    font-weight: bold;
+    color: #a2a2a2;
+    font-family: cursive;
+    font-size: large;">
     <div class="container">
         <div class="clear"></div>
-        `
         <div id="copyrights">
             <div class="inner">
                 <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis |
