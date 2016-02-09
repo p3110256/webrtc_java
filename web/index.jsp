@@ -22,15 +22,25 @@
 </head>
 <body style="background: linear-gradient(#eee, #4d4d4d)">
 <%--NAVIGATION MENU--%>
-<nav class="navbar navbar-inverse">
+<nav class="navbar">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Torrs</a>
+        <div class="navbar-header"
+             style="height: 10%;
+                width: 10%;
+                text-align: center;
+                font-size: xx-large !important;
+                font-weight: 900;
+                font-family: cursive;">
+            <a class="navbar-brand" href="#" style="font-size: 190%; color:#4d4d4d">Torrs</a>
         </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="index.jsp" class="staticlinks">Stream a WebTorrent</a></li>
-            <li><a href="upload.jsp" class="staticlinks">Upload a Torrent</a></li>
-            <li><a href="streamTorrent.jsp" class="staticlinks">Stream a Torrent</a></li>
+        <ul class="nav navbar-nav" style="height: 4%;
+                        text-align: center;
+                        font-weight: bold;
+                        font-family: cursive;
+                        font-size: large;">
+            <li class="active"><a href="index.jsp" class="staticlinks" style="color:#4d4d4d; font-size: 120%;">Stream a WebTorrent</a></li>
+            <li><a href="upload.jsp" class="staticlinks" style="color:#4d4d4d; font-size: 120%;">Upload a Torrent</a></li>
+            <li><a href="streamTorrent.jsp" class="staticlinks" style="color:#4d4d4d; font-size: 120%;">Stream a Torrent</a></li>
         </ul>
     </div>
 </nav>
@@ -66,16 +76,15 @@
     </div>
 
 
-
     <div class="VideoContainer" id="VideoContainer"
          style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
     </div>
     <div class="VideoInfo" id="VideoInfo">
         <%--<label>--%>
-            <%--Total Bytes received--%>
+        <%--Total Bytes received--%>
         <%--</label>--%>
         <%--<a id="bytesReceived">--%>
-            <%--0--%>
+        <%--0--%>
         <%--</a>B--%>
         <table class="table">
             <thead>
@@ -101,14 +110,14 @@
                 <td id="downloadSpeed"></td>
             </tr>
             <%--<tr>--%>
-                <%--<td>Mary</td>--%>
-                <%--<td>Moe</td>--%>
-                <%--<td>mary@example.com</td>--%>
+            <%--<td>Mary</td>--%>
+            <%--<td>Moe</td>--%>
+            <%--<td>mary@example.com</td>--%>
             <%--</tr>--%>
             <%--<tr>--%>
-                <%--<td>July</td>--%>
-                <%--<td>Dooley</td>--%>
-                <%--<td>july@example.com</td>--%>
+            <%--<td>July</td>--%>
+            <%--<td>Dooley</td>--%>
+            <%--<td>july@example.com</td>--%>
             <%--</tr>--%>
             </tbody>
         </table>

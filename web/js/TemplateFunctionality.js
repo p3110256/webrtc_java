@@ -15,8 +15,7 @@ $(document).ready(function () {
         var $btn = $(this);
         $btn.button('loading');
         // simulating a timeout
-        var input = $('#input').val('');
-
+        var input = $('#input').val();
         if (input == null || input == "") {
             alert("Give me a Magnet or Torrent ID to stream for you ;)")
             setTimeout(function () {
