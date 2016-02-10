@@ -90,7 +90,8 @@
     </div>
 
 </div>
-<div class="body" style="min-height: 75%;">
+
+<div class="body" style="min-height: 75%; margin-top:40px">
     <div class="container">
         <div class="message" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
             <h1>Here we are going to place our Video</h1>
@@ -139,7 +140,8 @@
 
     </div>
 </div>
-<%--</div>--%>
+
+
 <div class="footer" style="
     color: #1a1a1a;
     text-align: center;

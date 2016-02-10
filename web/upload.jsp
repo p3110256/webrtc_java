@@ -79,10 +79,8 @@
             <span class="btn btn-default btn-file">Choose a File
                 <input type="file" id="uploadfile">
             </span>
-            <div style="display: none; width:80%; margin:auto" id="overlay"><img style="height:200px; margin:auto" src="images/loading.gif" alt="Loading" />Loading...</div>
+            <div style="display: none; width:100%; margin:auto; margin-left:-40px" id="overlay"><img style="height:150px; margin:auto" src="images/loading.gif" alt="Loading" />Loading...</div>
         </div>
-
-        <div style="display: none; width:80%; margin:auto" id="overlay"><img style="height:200px; margin:auto" src="images/loading.gif" alt="Loading" />Loading...</div>
     </div>
 
 </div>
@@ -100,39 +98,37 @@
                         > No magnet URI </textarea>
 
             </div>
-        </div>
 
-
-        <div class="VideoContainer" id="VideoContainer" style="text-align: center; font-weight: bold;font-family: cursive;font-size: large; ">
+            <div class="VideoContainer" id="VideoContainer" style="text-align: center; font-weight: bold;font-family: cursive;font-size: large; ">
+            </div>
+            <div class="VideoInfo" id="VideoInfo" style="margin-top:40px!important">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>File Size</th>
+                        <th>File name</th>
+                        <th>Swarm</th>
+                        <th>Received</th>
+                        <th>Downloaded</th>
+                        <th>Time Remaining</th>
+                        <th>Progress</th>
+                        <th>Download Speed</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td id="file_size"></td>
+                        <td id="file_name"></td>
+                        <td id="swarm"></td>
+                        <td id="received"></td>
+                        <td id="downloaded"></td>
+                        <td id="timeRemaining"></td>
+                        <td id="downloadSpeed"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="VideoInfo" id="VideoInfo" style="margin-top:40px!important">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>File Size</th>
-                    <th>File name</th>
-                    <th>Swarm</th>
-                    <th>Received</th>
-                    <th>Downloaded</th>
-                    <th>Time Remaining</th>
-                    <th>Progress</th>
-                    <th>Download Speed</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td id="file_size"></td>
-                    <td id="file_name"></td>
-                    <td id="swarm"></td>
-                    <td id="received"></td>
-                    <td id="downloaded"></td>
-                    <td id="timeRemaining"></td>
-                    <td id="downloadSpeed"></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
     </div>
 </div>
 

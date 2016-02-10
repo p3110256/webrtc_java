@@ -137,7 +137,8 @@
 
     </div>
 </div>
-<%--</div>--%>
+
+
 <div class="footer" style="
     color: #1a1a1a;
     text-align: center;
@@ -152,7 +153,8 @@
                 <div class="clear"></div>
                 <div id="copyrights">
                     <div class="inner">
-                        <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis | p3110068@dias.aueb.gr </h4>
+                        <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis |
+                            p3110068@dias.aueb.gr </h4>
                         <a href="info.jsp">Info Page</a>
                     </div>
                 </div>
