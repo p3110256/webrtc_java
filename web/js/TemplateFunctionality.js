@@ -15,6 +15,7 @@ $(document).ready(function () {
                 $('#myStateButton').button('reset');
             }, 500);
         } else {
+            
             streamVideo(input);
 
         }
