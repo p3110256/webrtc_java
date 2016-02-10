@@ -79,10 +79,8 @@
             <span class="btn btn-default btn-file">Choose a File
                 <input type="file" id="uploadfile">
             </span>
-            <div style="display: none; width:80%; margin:auto" id="overlay"><img style="height:200px; margin:auto" src="images/loading.gif" alt="Loading" />Loading...</div>
+            <div style="display: none; width:100%; margin:auto; margin-left:-40px" id="overlay"><img style="height:150px; margin:auto" src="images/loading.gif" alt="Loading" />Loading...</div>
         </div>
-
-        <div style="display: none; width:80%; margin:auto" id="overlay"><img style="height:200px; margin:auto" src="images/loading.gif" alt="Loading" />Loading...</div>
     </div>
 
 </div>
