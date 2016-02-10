@@ -93,7 +93,7 @@
                 <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
                     Use this Magnet URI to share the video as a WebTorrent :
                 </h1>
-                <textarea id="videoMagnetURI" disabled="disabled"
+                <textarea id="videoMagnetURI"
                           style="width: 100%; text-align: center; resize: none; padding: 15px; border: 3px solid #1b6d85; margin:auto"
                         > No magnet URI </textarea>
 
@@ -107,11 +107,10 @@
                     <tr>
                         <th>File Size</th>
                         <th>File name</th>
-                        <th>Swarm</th>
-                        <th>Received</th>
-                        <th>Downloaded</th>
+                        <th>Path</th>
+                        <th>Upload Speed</th>
+                        <th>No of Peers</th>
                         <th>Time Remaining</th>
-                        <th>Progress</th>
                         <th>Download Speed</th>
                     </tr>
                     </thead>
@@ -119,10 +118,11 @@
                     <tr>
                         <td id="file_size"></td>
                         <td id="file_name"></td>
-                        <td id="downloaded"></td>
-                        <td id="timeRemaining"></td>
+                        <td id="path"></td>
                         <td id="uploadSpeed"></td>
-                        <td id="progress"></td>
+                        <td id="peersLength"></td>
+                        <td id="timeRemaining"></td>
+                        <td id="downloadSpeed"></td>
                     </tr>
                     </tbody>
                 </table>
