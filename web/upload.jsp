@@ -100,39 +100,37 @@
                         > No magnet URI </textarea>
 
             </div>
-        </div>
 
-
-        <div class="VideoContainer" id="VideoContainer" style="text-align: center; font-weight: bold;font-family: cursive;font-size: large; ">
+            <div class="VideoContainer" id="VideoContainer" style="text-align: center; font-weight: bold;font-family: cursive;font-size: large; ">
+            </div>
+            <div class="VideoInfo" id="VideoInfo" style="margin-top:40px!important">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>File Size</th>
+                        <th>File name</th>
+                        <th>Swarm</th>
+                        <th>Received</th>
+                        <th>Downloaded</th>
+                        <th>Time Remaining</th>
+                        <th>Progress</th>
+                        <th>Download Speed</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td id="file_size"></td>
+                        <td id="file_name"></td>
+                        <td id="swarm"></td>
+                        <td id="received"></td>
+                        <td id="downloaded"></td>
+                        <td id="timeRemaining"></td>
+                        <td id="downloadSpeed"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="VideoInfo" id="VideoInfo" style="margin-top:40px!important">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>File Size</th>
-                    <th>File name</th>
-                    <th>Swarm</th>
-                    <th>Received</th>
-                    <th>Downloaded</th>
-                    <th>Time Remaining</th>
-                    <th>Progress</th>
-                    <th>Download Speed</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td id="file_size"></td>
-                    <td id="file_name"></td>
-                    <td id="swarm"></td>
-                    <td id="received"></td>
-                    <td id="downloaded"></td>
-                    <td id="timeRemaining"></td>
-                    <td id="downloadSpeed"></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
     </div>
 </div>
 
