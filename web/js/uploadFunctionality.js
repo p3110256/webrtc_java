@@ -37,6 +37,17 @@ function seed(files) {
             // PAGE IS FULLY LOADED , FADE OUT YOUR OVERLAYING DIV
             $('#overlay').hide('slow');
         });
+        client.on('torrent', function(torrent){
+
+            setInterval(function(){
+                document.getElementById("swarm").innerHTML = torrent.infoHash;
+                document.getElementById("received").innerHTML = humanFileSize(torrent.received,true);
+                document.getElementById("downloaded").innerHTML = humanFileSize(torrent.received,true);
+                document.getElementById("timeRemaining").innerHTML = millisToMinutesAndSeconds(torrent.timeRemaining)+" min";
+                document.getElementById("downloadSpeed").innerHTML = torrent.downloadSpeed;
+            }, 1000);
+
+        });
     }
     else {
         alert("No WebRTC Support");

@@ -27,7 +27,7 @@ function streamVideo(link) {
 
     if (WebTorrent.WEBRTC_SUPPORT) {
         var client = new WebTorrent();
-        var magnetURI = 'magnet:?xt=urn:btih:2e3fa8dabccd34a6ab1edfb40524470bd3e4ceab&dn=the.flash.2014.209.hdtv-lol%5Bettv%5D.mp4&tr=udp%3A%2F%2Fexodus.desync.com%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&tr=wss%3A%2F%2Ftracker.webtorrent.io';
+        var magnetURI = 'magnet:?xt=urn:btih:730f7e584ddf03ea58e7da1dd61fa8d9183c9974&dn=the.flash.2014.210.hdtv-lol%5Bettv%5D.mp4&tr=udp%3A%2F%2Fexodus.desync.com%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&tr=wss%3A%2F%2Ftracker.webtorrent.io';
         client.add(magnetURI, function (torrent) {
             // Got torrent metadata!
             console.log('Client is downloading:', torrent.toString());
@@ -49,45 +49,35 @@ function streamVideo(link) {
                 $('#message').hide();
             });
 
-
-            //console.log(torrent.swarm);
-            //console.log(torrent.received);
-            //console.log(torrent.downloaded);
-            //console.log(torrent.timeRemaining);
-            //console.log(torrent.downloadSpeed);
-
             torrent.on('download',function(e){
-
                 //console.log("Inside download :"+ e.infoHash);
             });
         });
         client.on('torrent', function(torrent){
-
             setInterval(function(){
-                console.log("donwlaod");
-                //console.log(torrent);
-                //console.log(torrent.infoHash);
-                //console.log(torrent.infoHash);
-                //console.log(torrent.swarm);
-                //console.log(torrent.timeRemaining);
-                //console.log(torrent.received);
-                //console.log(torrent.downloaded);
-                document.getElementById("swarm").innerHTML = torrent.infoHash;
-                document.getElementById("received").innerHTML = humanFileSize(torrent.received,true);
+                //<td id="file_size"></td>
+                //<td id="file_name"></td>
+                //<td id="downloaded"></td>
+                //<td id="timeRemaining"></td>
+                //<td id="downloadSpeed"></td>
+                //<td id="progress"></td>
+                //document.getElementById("swarm").innerHTML = torrent.infoHash;
+                //document.getElementById("received").innerHTML = humanFileSize(torrent.received,true,false);
                 document.getElementById("downloaded").innerHTML = humanFileSize(torrent.received,true);
-                document.getElementById("timeRemaining").innerHTML = torrent.timeRemaining;
-                document.getElementById("downloadSpeed").innerHTML = torrent.downloadSpeed;
+                document.getElementById("timeRemaining").innerHTML = millisToMinutesAndSeconds(torrent.timeRemaining)+" min";
+                document.getElementById("downloadSpeed").innerHTML = humanFileSize(torrent.downloadSpeed,true);
+                var progress=torrent.progress*100;
+                document.getElementById("progress").innerHTML =progress.toFixed(2)+"%";
 
-            }, 3000);
-            //console.log("Swarm"+torrent.swarm);
-            //console.log("downloaded"+torrent.downloaded);
-            //console.log("timeRemaining"+torrent.timeRemaining);
+            }, 1000);
         });
     }
     else {
         alert("No WebRTC Support");
     }
 }
+
+
 function humanFileSize(bytes, si) {
     var thresh = si ? 1000 : 1024;
     if (Math.abs(bytes) < thresh) {
@@ -102,4 +92,10 @@ function humanFileSize(bytes, si) {
         ++u;
     } while (Math.abs(bytes) >= thresh && u < units.length - 1);
     return bytes.toFixed(1) + ' ' + units[u];
+}
+
+function millisToMinutesAndSeconds(millis) {
+    var minutes = Math.floor(millis / 60000);
+    var seconds = ((millis % 60000) / 1000).toFixed(0);
+    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }

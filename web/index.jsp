@@ -112,23 +112,24 @@
                 <tr>
                     <th>File Size</th>
                     <th>File name</th>
-                    <th>Swarm</th>
-                    <th>Received</th>
+                    <%--<th>Swarm</th>--%>
+                    <%--<th>Received</th>--%>
                     <th>Downloaded</th>
                     <th>Time Remaining</th>
-                    <th>Progress</th>
                     <th>Download Speed</th>
+                    <th>Progress</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td id="file_size"></td>
                     <td id="file_name"></td>
-                    <td id="swarm"></td>
-                    <td id="received"></td>
+                    <%--<td id="swarm"></td>--%>
+                    <%--<td id="received"></td>--%>
                     <td id="downloaded"></td>
                     <td id="timeRemaining"></td>
                     <td id="downloadSpeed"></td>
+                    <td id="progress"></td>
                 </tr>
                 </tbody>
             </table>
