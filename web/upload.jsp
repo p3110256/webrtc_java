@@ -64,8 +64,10 @@
             </div>
         </nav>
     </div>
+
+
     <%--UPLOAD BOX--%>
-    <div class="row">
+    <div class="row" id="uploadBox">
         <div class="col-lg-12">
             <div class="form-group">
                 <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
@@ -74,27 +76,39 @@
             </div>
         </div>
         <div class="col-md-12" style="text-align: center;">
-            <%--<input class="btn btn-primary btn-lg uploadVideo"type="file" id="upload" multiple="">--%>
             <span class="btn btn-default btn-file">Choose a File
                 <input type="file" id="uploadfile">
             </span>
 
         </div>
+
+        <div class="col-md-12" style="display: none; width:80%; margin:auto" id="overlay">
+            <img style="height:200px;margin:auto" src="images/loading.gif" alt="Loading" />
+            Loading...
+        </div>
     </div>
 
 </div>
 
-<div class="body" style="min-height: 75%;">
-    <div class="container">
-        <div class="message" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
-            <%--<h1>Select a file for uploading</h1>--%>
+<div class="body" style="min-height: 75%; margin-top:40px">
+    <div class="container" id="magnetURIdiv" style="display: none">
+
+        <div class="col-lg-12">
+            <div class="form-group">
+                <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
+                    Use this Magnet URI to share the video as a WebTorrent :
+                </h1>
+                <textarea id="videoMagnetURI" disabled="disabled"
+                          style="width: 100%; text-align: center; resize: none; padding: 15px; border: 3px solid #1b6d85; margin:auto"
+                        > No magnet URI </textarea>
+
+            </div>
         </div>
 
 
-        <div class="VideoContainer" id="VideoContainer"
-             style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
+        <div class="VideoContainer" id="VideoContainer" style="text-align: center; font-weight: bold;font-family: cursive;font-size: large; ">
         </div>
-        <div class="VideoInfo" id="VideoInfo">
+        <div class="VideoInfo" id="VideoInfo" style="margin-top:40px!important">
             <table class="table">
                 <thead>
                 <tr>
@@ -122,21 +136,10 @@
             </table>
         </div>
 
-        <div class="col-lg-12">
-            <div class="form-group">
-                <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
-                    Use this Magnet URI to share the video as a WebTorrent :
-                </h1>
-                <textarea id="videoMagnetURI" disabled="disabled"
-                          style="width: 100%; text-align: center; resize: none"
-                        > No magnet URI </textarea>
-
-            </div>
-        </div>
-
     </div>
 </div>
-<%--</div>--%>
+
+
 <div class="footer" style="
     color: #1a1a1a;
     text-align: center;

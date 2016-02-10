@@ -19,9 +19,6 @@
     <script type="text/javascript" src="js/TemplateFunctionality.js"></script>
     <%--<script type="text/javascript" src="js/torrentstime.js"></script>--%>
     <script src="//cdn.torrents-time.com/torrentstime.min.js"></script>
-    <script>
-        torrentsTime.init()
-    </script>
 
 </head>
 <body style="background: linear-gradient(#eee, #4d4d4d)">
@@ -69,11 +66,13 @@
     </div>
     <%--SEARCH BAR--%>
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12" >
             <div class="form-group">
                 <input type="text" class="form-control" id="input" placeholder="Enter Magnet/Torrent ID"
                        style="
-                        height: 4%;
+                        height: 30px;
+                        width: 80%;
+                        margin: auto;
                         text-align: center;
                         font-weight: bold;
                         font-family: cursive;
@@ -98,10 +97,18 @@
         </div>
 
 
-        <div class="VideoContainer" id="VideoContainer"
-             style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
-            <%--<div class="torrentsTime" id="torrentsTime" data-setup='{"source": "4"'></div>--%>
+        <%--<div class="VideoContainer" id="VideoContainer" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">--%>
+            <%--<div class="torrentsTime" id="torrentsTime1" data-setup='{"source": "magnet:?xt=urn:btih:E4F0B6A3723E58EAA45AB92AAE5D38072A5F8CDE&dn=game+of+thrones+s05e07+hdtv+x264+asap+ettv&tr=udp%3A%2F%2Ftracker.publicbt.com%2Fannounce&tr=udp%3A%2F%2Fglotorrents.pw%3A6969%2Fannounce"'></div>--%>
+        <%--</div>--%>
+
+        <div class="VideoContainer" id="VideoContainer" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
+
+            <script>
+                torrentsTime.init()
+            </script>
+            <div class="torrentsTime" id="torrentsTime" data-setup='{"source": "magnet:?xt=urn:btih:73A3E1F9492BA6B0FA5AFB95FEEBA59C001ABF62&dn=the+flash+2014+s02e13+hdtv+x264+lol+ettv&tr=udp%3A%2F%2Ftracker.publicbt.com%2Fannounce&tr=udp%3A%2F%2Fglotorrents.pw%3A6969%2Fannounce"}'></div>
         </div>
+
         <div class="VideoInfo" id="VideoInfo">
             <table class="table">
                 <thead>

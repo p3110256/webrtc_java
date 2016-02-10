@@ -17,6 +17,8 @@ function seed(files) {
     if (files.length == 0) return;
     console.log('Seeding ' + files.length + ' files');
 
+    $('#overlay').css("display","block");
+
     if (WebTorrent.WEBRTC_SUPPORT) {
         var client = new WebTorrent();
         //alert("seeding ??");
@@ -29,6 +31,11 @@ function seed(files) {
             $('#file_name').text(torrent.name);
             $('#videoMagnetURI').text(torrent.magnetURI);
             $('videoMagnetURI').autoResize();
+
+
+            $('#magnetURIdiv').css("display","block");
+            // PAGE IS FULLY LOADED , FADE OUT YOUR OVERLAYING DIV
+            $('#overlay').hide('slow');
         });
     }
     else {
