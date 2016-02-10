@@ -45,6 +45,7 @@ function streamVideo(link) {
                 //UnsetLoading Button after 3 seconds
                 setTimeout(function () {
                     $('#myStateButton').button('reset');
+                    $('#container').css('display','block');
                 }, 3000);
                 $('#message').hide();
             });

@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="background: linear-gradient(#eee, #4d4d4d)">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,12 +16,12 @@
     <%--//Local Scripts--%>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/TemplateFunctionality.js"></script>
+    <script type="text/javascript" src="js/torrentsTimeFunctionality.js"></script>
     <%--<script type="text/javascript" src="js/torrentstime.js"></script>--%>
     <script src="//cdn.torrents-time.com/torrentstime.min.js"></script>
 
 </head>
-<body style="background: linear-gradient(#eee, #4d4d4d)">
+<body style="background: inherit">
 
 <%--NAVIGATION MENU--%>
 <div class="header">
@@ -52,8 +52,7 @@
                         </li>
                         <li><a href="upload.jsp" class="staticlinks" style=" font-size: 120%;">Upload a WebTorrent</a>
                         </li>
-                        <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%; color: whitesmoke">Stream
-                            a Torrent</a></li>
+                        <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%; color: whitesmoke">Stream a Torrent</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.jsp"><span class=""></span></a></li>
@@ -64,13 +63,21 @@
             </div>
         </nav>
     </div>
+
     <%--SEARCH BAR--%>
     <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
+                    Enter a Magnet URI for a Torrent file containing a video to stream it.
+                </h1>
+            </div>
+        </div>
         <div class="col-lg-12" >
             <div class="form-group">
                 <input type="text" class="form-control" id="input" placeholder="Enter Magnet/Torrent ID"
                        style="
-                        height: 30px;
+                        height: 40px;
                         width: 80%;
                         margin: auto;
                         text-align: center;
@@ -81,7 +88,7 @@
             </div>
         </div>
         <div class="col-md-12" style="text-align: center;">
-            <button type="submit" id="myButton" data-complete-text="Done..."
+            <button type="submit" id="myStateButton" data-complete-text="Done..."
                     class="btn btn-primary btn-lg streamVideo"
                     autocomplete="off">
                 Submit
@@ -92,22 +99,12 @@
 </div>
 
 <div class="body" style="min-height: 75%; margin-top:40px">
-    <div class="container">
-        <div class="message" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
-            <h1>Here we are going to place our Video</h1>
-        </div>
+    <div class="container" id="container" style="display: none">
 
-
-        <%--<div class="VideoContainer" id="VideoContainer" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">--%>
-            <%--<div class="torrentsTime" id="torrentsTime1" data-setup='{"source": "magnet:?xt=urn:btih:E4F0B6A3723E58EAA45AB92AAE5D38072A5F8CDE&dn=game+of+thrones+s05e07+hdtv+x264+asap+ettv&tr=udp%3A%2F%2Ftracker.publicbt.com%2Fannounce&tr=udp%3A%2F%2Fglotorrents.pw%3A6969%2Fannounce"'></div>--%>
-        <%--</div>--%>
-
-        <div class="VideoContainer" id="VideoContainer" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
-
-            <script>
-                torrentsTime.init()
-            </script>
-            <div class="torrentsTime" id="torrentsTime" data-setup='{"source": "magnet:?xt=urn:btih:73A3E1F9492BA6B0FA5AFB95FEEBA59C001ABF62&dn=the+flash+2014+s02e13+hdtv+x264+lol+ettv&tr=udp%3A%2F%2Ftracker.publicbt.com%2Fannounce&tr=udp%3A%2F%2Fglotorrents.pw%3A6969%2Fannounce"}'></div>
+        <div class="VideoContainer" id="VideoContainer" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large; height:500px">
+            <%-- video will be put here from javascript ( in the following format ) --%>
+            <%--<script>torrentsTime.init()/script>--%>
+            <%--<div class="torrentsTime" id="torrentsTime" data-setup='{"source": "magnet:?xt=urn:btih:73A3E1F9492BA6B0FA5AFB95FEEBA59C001ABF62&dn=the+flash+2014+s02e13+hdtv+x264+lol+ettv&tr=udp%3A%2F%2Ftracker.publicbt.com%2Fannounce&tr=udp%3A%2F%2Fglotorrents.pw%3A6969%2Fannounce"}'></div>--%>
         </div>
 
         <div class="VideoInfo" id="VideoInfo">
@@ -116,23 +113,22 @@
                 <tr>
                     <th>File Size</th>
                     <th>File name</th>
-                    <th>Swarm</th>
-                    <th>Received</th>
                     <th>Downloaded</th>
                     <th>Time Remaining</th>
-                    <th>Progress</th>
                     <th>Download Speed</th>
+                    <th>Upload Speed</th>
+                    <th>Progress</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td id="file_size"></td>
                     <td id="file_name"></td>
-                    <td id="swarm"></td>
-                    <td id="received"></td>
                     <td id="downloaded"></td>
                     <td id="timeRemaining"></td>
                     <td id="downloadSpeed"></td>
+                    <td id="uploadSpeed"></td>
+                    <td id="progress"></td>
                 </tr>
                 </tbody>
             </table>
@@ -140,7 +136,6 @@
 
     </div>
 </div>
-
 
 <div class="footer" style="
     color: #1a1a1a;

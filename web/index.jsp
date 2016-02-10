@@ -65,7 +65,7 @@
         <div class="col-lg-12">
             <div class="form-group">
                 <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
-                    Enter a Magnet URI for a torrent file containing a video to stream it.
+                    Enter a Magnet URI for a WebTorrent file containing a video to stream it.
                 </h1>
             </div>
         </div>
@@ -73,7 +73,7 @@
             <div class="form-group">
                 <input type="text" class="form-control" id="input" placeholder="Enter Magnet/Torrent ID"
                        style="
-                        height: 30px;
+                        height: 40px;
                         width: 80%;
                         margin: auto;
                         text-align: center;
@@ -95,17 +95,12 @@
 </div>
 
 <div class="body" style="min-height: 75%; margin-top:40px">
-    <div class="container">
-        <div class="message" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
-            <h1 style="text-align: center;
-                        font-weight: bold;
-                        font-family: cursive;">Here we are going to place our Video</h1>
+    <div class="container" id="container" style="display: none">
+
+        <div class="VideoContainer" id="VideoContainer" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
+            <%-- video will be put here from javascript --%>
         </div>
 
-
-        <div class="VideoContainer" id="VideoContainer"
-             style="text-align: center;font-weight: bold;font-family: cursive;font-size: large;">
-        </div>
         <div class="VideoInfo" id="VideoInfo">
             <table class="table">
                 <thead>
@@ -135,7 +130,6 @@
 
     </div>
 </div>
-
 
 <div class="footer" style="
     color: #1a1a1a;
