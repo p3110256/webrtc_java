@@ -119,11 +119,10 @@
                     <tr>
                         <td id="file_size"></td>
                         <td id="file_name"></td>
-                        <td id="swarm"></td>
-                        <td id="received"></td>
                         <td id="downloaded"></td>
                         <td id="timeRemaining"></td>
-                        <td id="downloadSpeed"></td>
+                        <td id="uploadSpeed"></td>
+                        <td id="progress"></td>
                     </tr>
                     </tbody>
                 </table>

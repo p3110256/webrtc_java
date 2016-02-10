@@ -55,17 +55,10 @@ function streamVideo(link) {
         });
         client.on('torrent', function(torrent){
             setInterval(function(){
-                //<td id="file_size"></td>
-                //<td id="file_name"></td>
-                //<td id="downloaded"></td>
-                //<td id="timeRemaining"></td>
-                //<td id="downloadSpeed"></td>
-                //<td id="progress"></td>
-                //document.getElementById("swarm").innerHTML = torrent.infoHash;
-                //document.getElementById("received").innerHTML = humanFileSize(torrent.received,true,false);
                 document.getElementById("downloaded").innerHTML = humanFileSize(torrent.received,true);
                 document.getElementById("timeRemaining").innerHTML = millisToMinutesAndSeconds(torrent.timeRemaining)+" min";
                 document.getElementById("downloadSpeed").innerHTML = humanFileSize(torrent.downloadSpeed,true);
+                document.getElementById("uploadSpeed").innerHTML =humanFileSize(torrent.uploadSpeed,true);
                 var progress=torrent.progress*100;
                 document.getElementById("progress").innerHTML =progress.toFixed(2)+"%";
 
