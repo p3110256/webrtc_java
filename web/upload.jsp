@@ -79,13 +79,10 @@
             <span class="btn btn-default btn-file">Choose a File
                 <input type="file" id="uploadfile">
             </span>
-
+            <div style="display: none; width:80%; margin:auto" id="overlay"><img style="height:200px; margin:auto" src="images/loading.gif" alt="Loading" />Loading...</div>
         </div>
 
-        <div class="col-md-12" style="display: none; width:80%; margin:auto" id="overlay">
-            <img style="height:200px;margin:auto" src="images/loading.gif" alt="Loading" />
-            Loading...
-        </div>
+        <div style="display: none; width:80%; margin:auto" id="overlay"><img style="height:200px; margin:auto" src="images/loading.gif" alt="Loading" />Loading...</div>
     </div>
 
 </div>
