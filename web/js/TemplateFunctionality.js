@@ -15,7 +15,7 @@ $(document).ready(function () {
                 $('#myStateButton').button('reset');
             }, 500);
         } else {
-            
+
             streamVideo(input);
 
         }
@@ -27,10 +27,10 @@ function streamVideo(link) {
 
     if (WebTorrent.WEBRTC_SUPPORT) {
         var client = new WebTorrent();
-        var magnetURI = link;
+        var magnetURI = 'magnet:?xt=urn:btih:2e3fa8dabccd34a6ab1edfb40524470bd3e4ceab&dn=the.flash.2014.209.hdtv-lol%5Bettv%5D.mp4&tr=udp%3A%2F%2Fexodus.desync.com%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&tr=wss%3A%2F%2Ftracker.webtorrent.io';
         client.add(magnetURI, function (torrent) {
             // Got torrent metadata!
-            console.log('Client is downloading:', torrent.infoHash);
+            console.log('Client is downloading:', torrent.toString());
 
             torrent.files.forEach(function (file) {
                 // Display the file by appending it to the DOM. Supports video, audio, images, and
@@ -41,27 +41,48 @@ function streamVideo(link) {
                 var file_size = parseInt(file.length);
                 document.getElementById("file_size").innerHTML = humanFileSize(file_size, true);
                 document.getElementById("file_name").innerHTML = file.name;
-                ;
+
                 //UnsetLoading Button after 3 seconds
                 setTimeout(function () {
                     $('#myStateButton').button('reset');
                 }, 3000);
                 $('#message').hide();
             });
-            document.getElementById("swarm").innerHTML = torrent.swarm;
-            document.getElementById("received").innerHTML = torrent.received;
-            document.getElementById("downloaded").innerHTML = torrent.downloaded;
-            document.getElementById("timeRemaining").innerHTML = torrent.timeRemaining;
-            document.getElementById("downloadSpeed").innerHTML = torrent.downloadSpeed;
 
-            console.log(torrent.swarm);
-            console.log(torrent.received);
-            console.log(torrent.downloaded);
-            console.log(torrent.timeRemaining);
-            console.log(torrent.downloadSpeed);
 
+            //console.log(torrent.swarm);
+            //console.log(torrent.received);
+            //console.log(torrent.downloaded);
+            //console.log(torrent.timeRemaining);
+            //console.log(torrent.downloadSpeed);
+
+            torrent.on('download',function(e){
+
+                //console.log("Inside download :"+ e.infoHash);
+            });
         });
+        client.on('torrent', function(torrent){
 
+            setInterval(function(){
+                console.log("donwlaod");
+                //console.log(torrent);
+                //console.log(torrent.infoHash);
+                //console.log(torrent.infoHash);
+                //console.log(torrent.swarm);
+                //console.log(torrent.timeRemaining);
+                //console.log(torrent.received);
+                //console.log(torrent.downloaded);
+                document.getElementById("swarm").innerHTML = torrent.infoHash;
+                document.getElementById("received").innerHTML = humanFileSize(torrent.received,true);
+                document.getElementById("downloaded").innerHTML = humanFileSize(torrent.received,true);
+                document.getElementById("timeRemaining").innerHTML = torrent.timeRemaining;
+                document.getElementById("downloadSpeed").innerHTML = torrent.downloadSpeed;
+
+            }, 3000);
+            //console.log("Swarm"+torrent.swarm);
+            //console.log("downloaded"+torrent.downloaded);
+            //console.log("timeRemaining"+torrent.timeRemaining);
+        });
     }
     else {
         alert("No WebRTC Support");
