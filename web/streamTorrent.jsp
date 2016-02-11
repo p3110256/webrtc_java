@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Texnologia Polumeswn</title>
+    <title>Torrs Stream Torrent</title>
 
     <link href="css/main.css" rel="stylesheet" type="text/css"/>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
@@ -22,7 +22,7 @@
     <script src="//cdn.torrents-time.com/torrentstime.min.js"></script>
 
 </head>
-<body style="background: linear-gradient(#eee, #4d4d4d); min-height:100vh">
+<body style="background: linear-gradient(#eee, #4d4d4d);">
 
 <div id="wrap">
     <div id="main">
@@ -46,22 +46,12 @@
                                 font-family: cursive;
                             ">Torrs</a>
                         </div>
+
                         <div class="collapse navbar-collapse" id="myNavbar">
-                            <ul class="nav navbar-nav" style="height: 4%;
-                                text-align: center;
-                                font-weight: bold;
-                                font-family: cursive;
-                                font-size: large;">
-                                <li><a href="index.jsp" class="staticlinks" style=" font-size: 120%; ">Stream a WebTorrent</a>
-                                </li>
-                                <li><a href="upload.jsp" class="staticlinks" style=" font-size: 120%;">Upload a WebTorrent</a>
-                                </li>
-                                <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%; color: whitesmoke">Stream a Torrent</a></li>
-                            </ul>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="index.jsp"><span class=""></span></a></li>
-                                <li><a href="upload.jsp"><span class=""></span></a></li>
-                                <li><a href="streamTorrent.jsp"><span class=""></span></a></li>
+                            <ul class="nav navbar-nav navbar-nav-right" style="text-align: center; font-weight: bold; font-family: cursive; font-size: large;">
+                                <li><a href="streamWebTorrent.jsp"><span class="">Stream a WebTorrent</span></a></li>
+                                <li><a href="uploadWebTorrent.jsp"><span class="">Upload a WebTorrent</span></a></li>
+                                <li><a href="streamTorrent.jsp"><span class="" style="color:whitesmoke">Stream a Torrent</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -111,33 +101,6 @@
                     <%--<div class="torrentsTime" id="torrentsTime" data-setup='{"source": "magnet:?xt=urn:btih:73A3E1F9492BA6B0FA5AFB95FEEBA59C001ABF62&dn=the+flash+2014+s02e13+hdtv+x264+lol+ettv&tr=udp%3A%2F%2Ftracker.publicbt.com%2Fannounce&tr=udp%3A%2F%2Fglotorrents.pw%3A6969%2Fannounce"}'></div>--%>
                 </div>
 
-                <%--<div class="VideoInfo" id="VideoInfo">--%>
-                    <%--<table class="table">--%>
-                        <%--<thead>--%>
-                        <%--<tr>--%>
-                            <%--<th>File Size</th>--%>
-                            <%--<th>File name</th>--%>
-                            <%--<th>Downloaded</th>--%>
-                            <%--<th>Time Remaining</th>--%>
-                            <%--<th>Download Speed</th>--%>
-                            <%--<th>Upload Speed</th>--%>
-                            <%--<th>Progress</th>--%>
-                        <%--</tr>--%>
-                        <%--</thead>--%>
-                        <%--<tbody>--%>
-                        <%--<tr>--%>
-                            <%--<td id="file_size"></td>--%>
-                            <%--<td id="file_name"></td>--%>
-                            <%--<td id="downloaded"></td>--%>
-                            <%--<td id="timeRemaining"></td>--%>
-                            <%--<td id="downloadSpeed"></td>--%>
-                            <%--<td id="uploadSpeed"></td>--%>
-                            <%--<td id="progress"></td>--%>
-                        <%--</tr>--%>
-                        <%--</tbody>--%>
-                    <%--</table>--%>
-                <%--</div>--%>
-
             </div>
         </div>
 
@@ -160,7 +123,7 @@
                     <div class="inner">
                         <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis |
                             p3110068@dias.aueb.gr </h4>
-                        <a href="info.jsp">Info Page</a>
+                        <a href="index.jsp">Info Page</a>
                     </div>
                 </div>
             </div>

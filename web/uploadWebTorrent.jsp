@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Texnologia Polumeswn</title>
+    <title>Torrs Upload WebTorrent</title>
 
     <link href="css/main.css" rel="stylesheet" type="text/css"/>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
@@ -22,7 +22,7 @@
 
 
 </head>
-<body style="background: linear-gradient(#eee, #4d4d4d); min-height:100vh">
+<body style="background: linear-gradient(#eee, #4d4d4d);">
 
 <div id="wrap">
     <div id="main">
@@ -46,23 +46,12 @@
                                 font-family: cursive;
                             ">Torrs</a>
                         </div>
+
                         <div class="collapse navbar-collapse" id="myNavbar">
-                            <ul class="nav navbar-nav" style="height: 4%;
-                                text-align: center;
-                                font-weight: bold;
-                                font-family: cursive;
-                                font-size: large;">
-                                <li><a href="index.jsp" class="staticlinks" style=" font-size: 120%; ">Stream a WebTorrent</a>
-                                </li>
-                                <li><a href="upload.jsp" class="staticlinks" style=" font-size: 120%; color: whitesmoke">Upload
-                                    a WebTorrent</a></li>
-                                <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%;">Stream a
-                                    Torrent</a></li>
-                            </ul>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="index.jsp"><span class=""></span></a></li>
-                                <li><a href="upload.jsp"><span class=""></span></a></li>
-                                <li><a href="streamTorrent.jsp"><span class=""></span></a></li>
+                            <ul class="nav navbar-nav navbar-nav-right" style="text-align: center; font-weight: bold; font-family: cursive; font-size: large;">
+                                <li><a href="streamWebTorrent.jsp"><span class="">Stream a WebTorrent</span></a></li>
+                                <li><a href="uploadWebTorrent.jsp"><span class="" style="color:whitesmoke">Upload a WebTorrent</span></a></li>
+                                <li><a href="streamTorrent.jsp"><span class="">Stream a Torrent</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -152,8 +141,9 @@
                 <div class="clear"></div>
                 <div id="copyrights">
                     <div class="inner">
-                        <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis | p3110068@dias.aueb.gr </h4>
-                        <a href="info.jsp">Info Page</a>
+                        <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis |
+                            p3110068@dias.aueb.gr </h4>
+                        <a href="index.jsp">Info Page</a>
                     </div>
                 </div>
             </div>
