@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Texnologia Polumeswn</title>
 
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
@@ -23,137 +24,121 @@
 </head>
 <body style="background: linear-gradient(#eee, #4d4d4d); min-height:100vh">
 
-<%--NAVIGATION MENU--%>
-<div class="header">
-    <div class="row">
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.jsp" style="
-                        /*width: 10%;*/
-                        text-align: center;
-                        font-size: xx-large !important;
-                        font-weight: 900;
-                        font-family: cursive;
-                    ">Torrs</a>
+<div id="wrap">
+    <div id="main">
+
+        <%--NAVIGATION MENU--%>
+        <div class="header">
+            <div class="row">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="index.jsp" style="
+                                /*width: 10%;*/
+                                text-align: center;
+                                font-size: xx-large !important;
+                                font-weight: 900;
+                                font-family: cursive;
+                            ">Torrs</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav" style="height: 4%;
+                                text-align: center;
+                                font-weight: bold;
+                                font-family: cursive;
+                                font-size: large;">
+                                <li><a href="index.jsp" class="staticlinks" style=" font-size: 120%; ">Stream a WebTorrent</a>
+                                </li>
+                                <li><a href="upload.jsp" class="staticlinks" style=" font-size: 120%; color: whitesmoke">Upload
+                                    a WebTorrent</a></li>
+                                <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%;">Stream a
+                                    Torrent</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="index.jsp"><span class=""></span></a></li>
+                                <li><a href="upload.jsp"><span class=""></span></a></li>
+                                <li><a href="streamTorrent.jsp"><span class=""></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+
+            <%--UPLOAD BOX--%>
+            <div class="row" id="uploadBox">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
+                            Select a local file to upload in a WebTorrent
+                        </h1>
+                    </div>
                 </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav" style="height: 4%;
-                        text-align: center;
-                        font-weight: bold;
-                        font-family: cursive;
-                        font-size: large;">
-                        <li><a href="index.jsp" class="staticlinks" style=" font-size: 120%; ">Stream a WebTorrent</a>
-                        </li>
-                        <li><a href="upload.jsp" class="staticlinks" style=" font-size: 120%; color: whitesmoke">Upload
-                            a WebTorrent</a></li>
-                        <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%;">Stream a
-                            Torrent</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.jsp"><span class=""></span></a></li>
-                        <li><a href="upload.jsp"><span class=""></span></a></li>
-                        <li><a href="streamTorrent.jsp"><span class=""></span></a></li>
-                    </ul>
+                <div class="col-md-12" style="text-align: center;">
+                    <span class="btn btn-default btn-file">Choose a File
+                        <input type="file" id="uploadfile">
+                    </span>
+
+                    <div style="display: none; width:100%; margin:auto; margin-left:-40px" id="overlay"><img
+                            style="height:150px; margin:auto" src="images/loading.gif" alt="Loading"/>Loading...
+                    </div>
                 </div>
             </div>
-        </nav>
-    </div>
 
+        </div>
 
-    <%--UPLOAD BOX--%>
-    <div class="row" id="uploadBox">
-        <div class="col-lg-12">
-            <div class="form-group">
-                <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
-                    Select a local file to upload in a WebTorrent
-                </h1>
+        <div class="body" style="margin-top:40px">
+            <div class="container" id="magnetURIdiv" style="display: none">
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
+                            Use this Magnet URI to share the video as a WebTorrent :
+                        </h1>
+                        <textarea id="videoMagnetURI"
+                                  style="width: 100%; text-align: center; resize: none; padding: 15px; border: 3px solid #1b6d85; margin:auto"
+                                > No magnet URI </textarea>
+
+                    </div>
+
+                    <div class="VideoContainer" id="VideoContainer"
+                         style="text-align: center; font-weight: bold;font-family: cursive;font-size: large; ">
+                    </div>
+                    <div class="VideoInfo" id="VideoInfo" style="margin-top:40px!important">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>File Size</th>
+                                <th>File name</th>
+                                <th>Path</th>
+                                <th>Upload Speed</th>
+                                <th>No of Peers</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td id="file_size"></td>
+                                <td id="file_name"></td>
+                                <td id="path"></td>
+                                <td id="uploadSpeed"></td>
+                                <td id="peersLength"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-md-12" style="text-align: center;">
-            <span class="btn btn-default btn-file">Choose a File
-                <input type="file" id="uploadfile">
-            </span>
 
-            <div style="display: none; width:100%; margin:auto; margin-left:-40px" id="overlay"><img
-                    style="height:150px; margin:auto" src="images/loading.gif" alt="Loading"/>Loading...
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<div class="body" style="min-height: 75%; margin-top:40px">
-    <div class="container" id="magnetURIdiv" style="display: none">
-
-        <div class="col-lg-12">
-            <div class="form-group">
-                <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
-                    Use this Magnet URI to share the video as a WebTorrent :
-                </h1>
-                <textarea id="videoMagnetURI"
-                          style="width: 100%; text-align: center; resize: none; padding: 15px; border: 3px solid #1b6d85; margin:auto"
-                        > No magnet URI </textarea>
-
-            </div>
-
-            <div class="VideoContainer" id="VideoContainer"
-                 style="text-align: center; font-weight: bold;font-family: cursive;font-size: large; ">
-            </div>
-            <div class="VideoInfo" id="VideoInfo" style="margin-top:40px!important">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>File Size</th>
-                        <th>File name</th>
-                        <th>Path</th>
-                        <th>Upload Speed</th>
-                        <th>No of Peers</th>
-                        <th>Time Remaining</th>
-                        <th>IP ADRESSES</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td id="file_size"></td>
-                        <td id="file_name"></td>
-                        <td id="path"></td>
-                        <td id="uploadSpeed"></td>
-                        <td id="peersLength"></td>
-                        <%--<td id="timeRemaining"></td>--%>
-                        <%--<td id="ip_address">--%>
-                            <%--<table class="table">--%>
-                                <%--<thead>--%>
-                                <%--<tr>--%>
-                                    <%--<th>IP1</th>--%>
-                                    <%--<th>IP2</th>--%>
-                                    <%--<th>IP3</th>--%>
-                                <%--</tr>--%>
-                                <%--</thead>--%>
-                                <%--<tbody>--%>
-                                <%--<tr>--%>
-                                    <%--<td id="ip1"></td>--%>
-                                    <%--<td id="ip2"></td>--%>
-                                    <%--<td id="ip3"></td>--%>
-                                <%--</tr>--%>
-                                <%--</tbody>--%>
-                            <%--</table>--%>
-                        <%--</td>--%>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </div>
 </div>
 
-
-<div class="footer" style="
+<div id="footer" class="footer" style="
     color: #1a1a1a;
     text-align: center;
     padding-top: 10px;
@@ -167,8 +152,7 @@
                 <div class="clear"></div>
                 <div id="copyrights">
                     <div class="inner">
-                        <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis |
-                            p3110068@dias.aueb.gr </h4>
+                        <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis | p3110068@dias.aueb.gr </h4>
                         <a href="info.jsp">Info Page</a>
                     </div>
                 </div>

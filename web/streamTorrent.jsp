@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Texnologia Polumeswn</title>
 
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
@@ -23,121 +24,127 @@
 </head>
 <body style="background: linear-gradient(#eee, #4d4d4d); min-height:100vh">
 
-<%--NAVIGATION MENU--%>
-<div class="header">
-    <div class="row">
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+<div id="wrap">
+    <div id="main">
+
+        <%--NAVIGATION MENU--%>
+        <div class="header">
+            <div class="row">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="index.jsp" style="
+                                /*width: 10%;*/
+                                text-align: center;
+                                font-size: xx-large !important;
+                                font-weight: 900;
+                                font-family: cursive;
+                            ">Torrs</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav" style="height: 4%;
+                                text-align: center;
+                                font-weight: bold;
+                                font-family: cursive;
+                                font-size: large;">
+                                <li><a href="index.jsp" class="staticlinks" style=" font-size: 120%; ">Stream a WebTorrent</a>
+                                </li>
+                                <li><a href="upload.jsp" class="staticlinks" style=" font-size: 120%;">Upload a WebTorrent</a>
+                                </li>
+                                <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%; color: whitesmoke">Stream a Torrent</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="index.jsp"><span class=""></span></a></li>
+                                <li><a href="upload.jsp"><span class=""></span></a></li>
+                                <li><a href="streamTorrent.jsp"><span class=""></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <%--SEARCH BAR--%>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
+                            Enter a Magnet URI for a Torrent file containing a video to stream it.
+                        </h1>
+                    </div>
+                </div>
+                <div class="col-lg-12" >
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="input" placeholder="Enter Magnet/Torrent ID"
+                               style="
+                                height: 40px;
+                                width: 80%;
+                                margin: auto;
+                                text-align: center;
+                                font-weight: bold;
+                                font-family: cursive;
+                                font-size: large;
+                                ">
+                    </div>
+                </div>
+                <div class="col-md-12" style="text-align: center;">
+                    <button type="submit" id="myStateButton" data-complete-text="Done..."
+                            class="btn btn-primary btn-lg streamVideo"
+                            autocomplete="off">
+                        Submit
                     </button>
-                    <a class="navbar-brand" href="index.jsp" style="
-                        /*width: 10%;*/
-                        text-align: center;
-                        font-size: xx-large !important;
-                        font-weight: 900;
-                        font-family: cursive;
-                    ">Torrs</a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav" style="height: 4%;
-                        text-align: center;
-                        font-weight: bold;
-                        font-family: cursive;
-                        font-size: large;">
-                        <li><a href="index.jsp" class="staticlinks" style=" font-size: 120%; ">Stream a WebTorrent</a>
-                        </li>
-                        <li><a href="upload.jsp" class="staticlinks" style=" font-size: 120%;">Upload a WebTorrent</a>
-                        </li>
-                        <li><a href="streamTorrent.jsp" class="staticlinks" style=" font-size: 120%; color: whitesmoke">Stream a Torrent</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.jsp"><span class=""></span></a></li>
-                        <li><a href="upload.jsp"><span class=""></span></a></li>
-                        <li><a href="streamTorrent.jsp"><span class=""></span></a></li>
-                    </ul>
                 </div>
             </div>
-        </nav>
-    </div>
 
-    <%--SEARCH BAR--%>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="form-group">
-                <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
-                    Enter a Magnet URI for a Torrent file containing a video to stream it.
-                </h1>
+        </div>
+
+        <div class="body" style="margin-top:40px">
+            <div class="container" id="container" style="display: none">
+
+                <div class="VideoContainer" id="VideoContainer" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large; height:500px">
+                    <%-- video will be put here from javascript ( in the following format ) --%>
+                    <%--<script>torrentsTime.init()/script>--%>
+                    <%--<div class="torrentsTime" id="torrentsTime" data-setup='{"source": "magnet:?xt=urn:btih:73A3E1F9492BA6B0FA5AFB95FEEBA59C001ABF62&dn=the+flash+2014+s02e13+hdtv+x264+lol+ettv&tr=udp%3A%2F%2Ftracker.publicbt.com%2Fannounce&tr=udp%3A%2F%2Fglotorrents.pw%3A6969%2Fannounce"}'></div>--%>
+                </div>
+
+                <%--<div class="VideoInfo" id="VideoInfo">--%>
+                    <%--<table class="table">--%>
+                        <%--<thead>--%>
+                        <%--<tr>--%>
+                            <%--<th>File Size</th>--%>
+                            <%--<th>File name</th>--%>
+                            <%--<th>Downloaded</th>--%>
+                            <%--<th>Time Remaining</th>--%>
+                            <%--<th>Download Speed</th>--%>
+                            <%--<th>Upload Speed</th>--%>
+                            <%--<th>Progress</th>--%>
+                        <%--</tr>--%>
+                        <%--</thead>--%>
+                        <%--<tbody>--%>
+                        <%--<tr>--%>
+                            <%--<td id="file_size"></td>--%>
+                            <%--<td id="file_name"></td>--%>
+                            <%--<td id="downloaded"></td>--%>
+                            <%--<td id="timeRemaining"></td>--%>
+                            <%--<td id="downloadSpeed"></td>--%>
+                            <%--<td id="uploadSpeed"></td>--%>
+                            <%--<td id="progress"></td>--%>
+                        <%--</tr>--%>
+                        <%--</tbody>--%>
+                    <%--</table>--%>
+                <%--</div>--%>
+
             </div>
-        </div>
-        <div class="col-lg-12" >
-            <div class="form-group">
-                <input type="text" class="form-control" id="input" placeholder="Enter Magnet/Torrent ID"
-                       style="
-                        height: 40px;
-                        width: 80%;
-                        margin: auto;
-                        text-align: center;
-                        font-weight: bold;
-                        font-family: cursive;
-                        font-size: large;
-                        ">
-            </div>
-        </div>
-        <div class="col-md-12" style="text-align: center;">
-            <button type="submit" id="myStateButton" data-complete-text="Done..."
-                    class="btn btn-primary btn-lg streamVideo"
-                    autocomplete="off">
-                Submit
-            </button>
-        </div>
-    </div>
-
-</div>
-
-<div class="body" style="min-height: 75%; margin-top:40px">
-    <div class="container" id="container" style="display: none">
-
-        <div class="VideoContainer" id="VideoContainer" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large; height:500px">
-            <%-- video will be put here from javascript ( in the following format ) --%>
-            <%--<script>torrentsTime.init()/script>--%>
-            <%--<div class="torrentsTime" id="torrentsTime" data-setup='{"source": "magnet:?xt=urn:btih:73A3E1F9492BA6B0FA5AFB95FEEBA59C001ABF62&dn=the+flash+2014+s02e13+hdtv+x264+lol+ettv&tr=udp%3A%2F%2Ftracker.publicbt.com%2Fannounce&tr=udp%3A%2F%2Fglotorrents.pw%3A6969%2Fannounce"}'></div>--%>
-        </div>
-
-        <div class="VideoInfo" id="VideoInfo">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>File Size</th>
-                    <th>File name</th>
-                    <th>Downloaded</th>
-                    <th>Time Remaining</th>
-                    <th>Download Speed</th>
-                    <th>Upload Speed</th>
-                    <th>Progress</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td id="file_size"></td>
-                    <td id="file_name"></td>
-                    <td id="downloaded"></td>
-                    <td id="timeRemaining"></td>
-                    <td id="downloadSpeed"></td>
-                    <td id="uploadSpeed"></td>
-                    <td id="progress"></td>
-                </tr>
-                </tbody>
-            </table>
         </div>
 
     </div>
 </div>
 
-<div class="footer" style="
+<div id="footer" class="footer" style="
     color: #1a1a1a;
     text-align: center;
     padding-top: 10px;
