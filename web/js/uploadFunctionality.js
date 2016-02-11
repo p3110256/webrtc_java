@@ -54,15 +54,11 @@ function seed(files) {
                 //<th>No of Peers</th>
                 //<th>Time Remaining</th>
                 //<th>Ip Adresses</th>
-                console.log(torrent.swarm.peers);
+                //console.log(torrent.swarm.peers);
 
                 //document.getElementById("downloaded").innerHTML = humanFileSize(torrent.received,true);
                 document.getElementById("path").innerHTML = torrent.path;
                 document.getElementById("uploadSpeed").innerHTML =humanFileSize(torrent.uploadSpeed,true);
-                document.getElementById("peersLength").innerHTML =humanFileSize(torrent.uploadSpeed,true);
-                var progress=torrent.progress*100;
-                //document.getElementById("progress").innerHTML =progress.toFixed(2)+"%";
-                //document.getElementById("downloadSpeed").innerHTML = humanFileSize(torrent.downloadSpeed,true);
                 document.getElementById("timeRemaining").innerHTML = millisToMinutesAndSeconds(torrent.timeRemaining)+" min";
                 document.getElementById("peersLength").innerHTML = torrent.swarm._peersLength;
 
