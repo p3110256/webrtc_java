@@ -111,7 +111,7 @@
                         <th>Upload Speed</th>
                         <th>No of Peers</th>
                         <th>Time Remaining</th>
-                        <th>Download Speed</th>
+                        <th>Ip Adresses</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -122,7 +122,7 @@
                         <td id="uploadSpeed"></td>
                         <td id="peersLength"></td>
                         <td id="timeRemaining"></td>
-                        <td id="downloadSpeed"></td>
+                        <td id="ip_adress"></td>
                     </tr>
                     </tbody>
                 </table>

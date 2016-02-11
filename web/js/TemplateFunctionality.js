@@ -49,12 +49,6 @@ function streamVideo(link) {
                 }, 3000);
                 $('#message').hide();
             });
-
-            torrent.on('download',function(e){
-                //console.log("Inside download :"+ e.infoHash);
-            });
-        });
-        client.on('torrent', function(torrent){
             setInterval(function(){
                 document.getElementById("downloaded").innerHTML = humanFileSize(torrent.received,true);
                 document.getElementById("timeRemaining").innerHTML = millisToMinutesAndSeconds(torrent.timeRemaining)+" min";

@@ -22,11 +22,20 @@ function seed(files) {
     if (WebTorrent.WEBRTC_SUPPORT) {
         var client = new WebTorrent();
         //alert("seeding ??");
-        client.seed(files, function (torrent) {
+        client.seed(files, function onseed(torrent) {
             console.log('Client is seeding ' + torrent.infoHash)
             console.log('Client is seeding ' + torrent.name)
             console.log('Client is seeding ' + torrent.magnetURI)
+            torrent.files.forEach(function (file) {
+                // Display the file by appending it to the DOM. Supports video, audio, images, and
+                // more. Specify a container element (CSS selector or reference to DOM node).
+                //Append file to body and let themagic begin
+                file.appendTo('#VideoContainer');
+                var file_size = parseInt(file.length);
+                document.getElementById("file_size").innerHTML = humanFileSize(file_size, true);
+                document.getElementById("file_name").innerHTML = file.name;
 
+            });
             $('#file_size').text(humanFileSize(parseInt(torrent.length), true));
             $('#file_name').text(torrent.name);
             $('#videoMagnetURI').text(torrent.magnetURI);
@@ -36,17 +45,28 @@ function seed(files) {
             $('#magnetURIdiv').css("display","block");
             // PAGE IS FULLY LOADED , FADE OUT YOUR OVERLAYING DIV
             $('#overlay').hide('slow');
-        });
-        client.on('torrent', function(torrent){
 
             setInterval(function(){
-                document.getElementById("swarm").innerHTML = torrent.infoHash;
-                document.getElementById("received").innerHTML = humanFileSize(torrent.received,true);
-                document.getElementById("downloaded").innerHTML = humanFileSize(torrent.received,true);
-                document.getElementById("timeRemaining").innerHTML = millisToMinutesAndSeconds(torrent.timeRemaining)+" min";
-                document.getElementById("downloadSpeed").innerHTML = torrent.downloadSpeed;
-            }, 1000);
+                //<th>File Size</th>
+                //<th>File name</th>
+                //<th>Path</th>
+                //<th>Upload Speed</th>
+                //<th>No of Peers</th>
+                //<th>Time Remaining</th>
+                //<th>Ip Adresses</th>
+                console.log(torrent.swarm.peers);
 
+                //document.getElementById("downloaded").innerHTML = humanFileSize(torrent.received,true);
+                document.getElementById("path").innerHTML = torrent.path;
+                document.getElementById("uploadSpeed").innerHTML =humanFileSize(torrent.uploadSpeed,true);
+                document.getElementById("peersLength").innerHTML =humanFileSize(torrent.uploadSpeed,true);
+                var progress=torrent.progress*100;
+                //document.getElementById("progress").innerHTML =progress.toFixed(2)+"%";
+                //document.getElementById("downloadSpeed").innerHTML = humanFileSize(torrent.downloadSpeed,true);
+                document.getElementById("timeRemaining").innerHTML = millisToMinutesAndSeconds(torrent.timeRemaining)+" min";
+                document.getElementById("peersLength").innerHTML = torrent.swarm._peersLength;
+
+            }, 1000);
         });
     }
     else {
@@ -70,6 +90,12 @@ function humanFileSize(bytes, si) {
         ++u;
     } while (Math.abs(bytes) >= thresh && u < units.length - 1);
     return bytes.toFixed(1) + ' ' + units[u];
+}
+
+function millisToMinutesAndSeconds(millis) {
+    var minutes = Math.floor(millis / 60000);
+    var seconds = ((millis % 60000) / 1000).toFixed(0);
+    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }
 
 //function onTorrent (torrent) {
