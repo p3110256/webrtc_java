@@ -21,7 +21,7 @@
 
 
 </head>
-<body style="background: linear-gradient(#eee, #4d4d4d)">
+<body style="background: linear-gradient(#eee, #4d4d4d); min-height:100vh">
 
 <%--NAVIGATION MENU--%>
 <div class="header">
