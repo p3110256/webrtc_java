@@ -41,8 +41,7 @@ function seed(files) {
             $('#videoMagnetURI').text(torrent.magnetURI);
             $('videoMagnetURI').autoResize();
 
-
-            $('#magnetURIdiv').css("display","block");
+            $('#magnetURIdiv').fadeIn('slow');
             // PAGE IS FULLY LOADED , FADE OUT YOUR OVERLAYING DIV
             $('#overlay').hide('slow');
 

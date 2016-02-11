@@ -27,7 +27,7 @@ $(document).ready(function () {
 
             $('#VideoContainer').append(video_element);
             $('#myStateButton').button('reset');
-            $('#container').css('display','block');
+            $('#container').fadeIn('slow');
         }
     });
 

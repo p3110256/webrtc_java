@@ -15,9 +15,7 @@ $(document).ready(function () {
                 $('#myStateButton').button('reset');
             }, 500);
         } else {
-
             streamVideo(input);
-
         }
     });
 });
@@ -45,9 +43,8 @@ function streamVideo(link) {
                 //UnsetLoading Button after 3 seconds
                 setTimeout(function () {
                     $('#myStateButton').button('reset');
-                    $('#container').css('display','block');
                 }, 3000);
-                $('#message').hide();
+                $('#container').fadeIn('slow');
             });
             setInterval(function(){
                 document.getElementById("downloaded").innerHTML = humanFileSize(torrent.received,true);
