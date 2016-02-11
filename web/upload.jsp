@@ -125,7 +125,7 @@
                         <td id="path"></td>
                         <td id="uploadSpeed"></td>
                         <td id="peersLength"></td>
-                        <td id="timeRemaining"></td>
+                        <%--<td id="timeRemaining"></td>--%>
                         <%--<td id="ip_address">--%>
                             <%--<table class="table">--%>
                                 <%--<thead>--%>
