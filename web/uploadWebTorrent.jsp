@@ -98,24 +98,25 @@
                     <div class="VideoContainer" id="VideoContainer"
                          style="text-align: center; font-weight: bold;font-family: cursive;font-size: large; ">
                     </div>
+
                     <div class="VideoInfo" id="VideoInfo" style="margin-top:40px!important">
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>File Size</th>
-                                <th>File name</th>
-                                <th>Path</th>
-                                <th>Upload Speed</th>
-                                <th>No of Peers</th>
+                                <th style="max-width: 20%">File Size</th>
+                                <th style="max-width: 20%">File name</th>
+                                <th style="max-width: 20%">Path</th>
+                                <th style="max-width: 20%">Upload Speed</th>
+                                <th style="max-width: 20%">No of Peers</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td id="file_size"></td>
-                                <td id="file_name"></td>
-                                <td id="path"></td>
-                                <td id="uploadSpeed"></td>
-                                <td id="peersLength"></td>
+                                <td style="max-width: 20%" id="file_size"></td>
+                                <td style="max-width: 20%" id="file_name"></td>
+                                <td style="max-width: 20%" id="path"></td>
+                                <td style="max-width: 20%" id="uploadSpeed"></td>
+                                <td style="max-width: 20%" id="peersLength"></td>
                             </tr>
                             </tbody>
                         </table>

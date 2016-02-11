@@ -96,28 +96,28 @@
                     <%-- video will be put here from javascript --%>
                 </div>
 
-                <div class="VideoInfo" id="VideoInfo">
+                <div class="VideoInfo" id="VideoInfo" style="margin-top:40px!important">
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>File Size</th>
-                            <th>File name</th>
-                            <th>Downloaded</th>
-                            <th>Time Remaining</th>
-                            <th>Download Speed</th>
-                            <th>Upload Speed</th>
-                            <th>Progress</th>
+                            <th style="max-width: 15%">File Size</th>
+                            <th style="max-width: 25%">File name</th>
+                            <th style="max-width: 15%">Downloaded</th>
+                            <th style="max-width: 15%">Time Remaining</th>
+                            <th style="max-width: 10%">Download Speed</th>
+                            <th style="max-width: 10%">Upload Speed</th>
+                            <th style="max-width: 10%">Progress</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td id="file_size"></td>
-                            <td id="file_name"></td>
-                            <td id="downloaded"></td>
-                            <td id="timeRemaining"></td>
-                            <td id="downloadSpeed"></td>
-                            <td id="uploadSpeed"></td>
-                            <td id="progress"></td>
+                            <td style="max-width: 15%" id="file_size"></td>
+                            <td style="max-width: 25%" id="file_name"></td>
+                            <td style="max-width: 15%" id="downloaded"></td>
+                            <td style="max-width: 15%" id="timeRemaining"></td>
+                            <td style="max-width: 10%" id="downloadSpeed"></td>
+                            <td style="max-width: 10%" id="uploadSpeed"></td>
+                            <td style="max-width: 10%" id="progress"></td>
                         </tr>
                         </tbody>
                     </table>

@@ -18,7 +18,7 @@ html, body {
 }
 
 #main {
-    overflow:hidden;
+    overflow:auto;
     padding-bottom: 90px; /* must be same height as the footer */
 }
 
@@ -43,3 +43,13 @@ body:before {
 video {
     max-width: 100%;
 }
+
+
+.content > * {
+    width: 100vw;
+}
+
+
+
+
+
