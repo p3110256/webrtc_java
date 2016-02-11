@@ -17,7 +17,6 @@
     <%--//Local Scripts--%>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/TemplateFunctionality.js"></script>
 
 </head>
 <body style="background: linear-gradient(#eee, #4d4d4d);">
