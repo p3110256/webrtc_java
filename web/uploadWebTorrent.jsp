@@ -141,8 +141,10 @@
                 <div class="clear"></div>
                 <div id="copyrights">
                     <div class="inner">
-                        <h4> Copyright 2015 | Alexandros Polichronopoulos | p3110256@dias.aueb.gr | Marios Kamperis |
-                            p3110068@dias.aueb.gr </h4>
+                        <h4> Copyright 2016 |
+                            Alexandros Polichronopoulos (p3110256) |
+                            Marios Kamperis (p3110068) |
+                            Jiorgos Pelekanos (p3050151) </h4>
                         <a href="index.jsp">Info Page</a>
                     </div>
                 </div>
