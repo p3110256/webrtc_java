@@ -79,7 +79,10 @@
             <span class="btn btn-default btn-file">Choose a File
                 <input type="file" id="uploadfile">
             </span>
-            <div style="display: none; width:100%; margin:auto; margin-left:-40px" id="overlay"><img style="height:150px; margin:auto" src="images/loading.gif" alt="Loading" />Loading...</div>
+
+            <div style="display: none; width:100%; margin:auto; margin-left:-40px" id="overlay"><img
+                    style="height:150px; margin:auto" src="images/loading.gif" alt="Loading"/>Loading...
+            </div>
         </div>
     </div>
 
@@ -99,7 +102,8 @@
 
             </div>
 
-            <div class="VideoContainer" id="VideoContainer" style="text-align: center; font-weight: bold;font-family: cursive;font-size: large; ">
+            <div class="VideoContainer" id="VideoContainer"
+                 style="text-align: center; font-weight: bold;font-family: cursive;font-size: large; ">
             </div>
             <div class="VideoInfo" id="VideoInfo" style="margin-top:40px!important">
                 <table class="table">
@@ -111,7 +115,7 @@
                         <th>Upload Speed</th>
                         <th>No of Peers</th>
                         <th>Time Remaining</th>
-                        <th>Ip Adresses</th>
+                        <th>IP ADRESSES</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -122,7 +126,24 @@
                         <td id="uploadSpeed"></td>
                         <td id="peersLength"></td>
                         <td id="timeRemaining"></td>
-                        <td id="ip_adress"></td>
+                        <%--<td id="ip_address">--%>
+                            <%--<table class="table">--%>
+                                <%--<thead>--%>
+                                <%--<tr>--%>
+                                    <%--<th>IP1</th>--%>
+                                    <%--<th>IP2</th>--%>
+                                    <%--<th>IP3</th>--%>
+                                <%--</tr>--%>
+                                <%--</thead>--%>
+                                <%--<tbody>--%>
+                                <%--<tr>--%>
+                                    <%--<td id="ip1"></td>--%>
+                                    <%--<td id="ip2"></td>--%>
+                                    <%--<td id="ip3"></td>--%>
+                                <%--</tr>--%>
+                                <%--</tbody>--%>
+                            <%--</table>--%>
+                        <%--</td>--%>
                     </tr>
                     </tbody>
                 </table>
