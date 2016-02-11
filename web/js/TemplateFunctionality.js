@@ -49,8 +49,13 @@ function streamVideo(link) {
                 }, 3000);
                 $('#message').hide();
             });
+
+            torrent.on('download',function(e){
+                //console.log("Inside download :"+ e.infoHash);
+            });
+        });
+        client.on('torrent', function(torrent){
             setInterval(function(){
-                console.log(torrent);
                 document.getElementById("downloaded").innerHTML = humanFileSize(torrent.received,true);
                 document.getElementById("timeRemaining").innerHTML = millisToMinutesAndSeconds(torrent.timeRemaining)+" min";
                 document.getElementById("downloadSpeed").innerHTML = humanFileSize(torrent.downloadSpeed,true);
@@ -59,19 +64,7 @@ function streamVideo(link) {
                 document.getElementById("progress").innerHTML =progress.toFixed(2)+"%";
 
             }, 1000);
-
         });
-        //client.on('torrent', function(torrent){
-        //    setInterval(function(){
-        //        document.getElementById("downloaded").innerHTML = humanFileSize(torrent.received,true);
-        //        document.getElementById("timeRemaining").innerHTML = millisToMinutesAndSeconds(torrent.timeRemaining)+" min";
-        //        document.getElementById("downloadSpeed").innerHTML = humanFileSize(torrent.downloadSpeed,true);
-        //        document.getElementById("uploadSpeed").innerHTML =humanFileSize(torrent.uploadSpeed,true);
-        //        var progress=torrent.progress*100;
-        //        document.getElementById("progress").innerHTML =progress.toFixed(2)+"%";
-        //
-        //    }, 1000);
-        //});
     }
     else {
         alert("No WebRTC Support");

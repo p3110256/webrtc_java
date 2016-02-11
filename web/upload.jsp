@@ -71,7 +71,7 @@
         <div class="col-lg-12">
             <div class="form-group">
                 <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
-                    Select a Local File for Upload
+                    Select a local file to upload in a WebTorrent
                 </h1>
             </div>
         </div>
