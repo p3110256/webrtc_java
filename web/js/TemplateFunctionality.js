@@ -1,7 +1,3 @@
-/**
- * Created by Marios on 2/8/2016.
- */
-
 $(document).ready(function () {
 
     $("#myStateButton").click(function () {
@@ -19,13 +15,13 @@ $(document).ready(function () {
         }
     });
 });
+
 function streamVideo(link) {
     var $btn = $(this).button('loading');
 
-
     if (WebTorrent.WEBRTC_SUPPORT) {
         var client = new WebTorrent();
-        var magnetURI = link;//'magnet:?xt=urn:btih:730f7e584ddf03ea58e7da1dd61fa8d9183c9974&dn=the.flash.2014.210.hdtv-lol%5Bettv%5D.mp4&tr=udp%3A%2F%2Fexodus.desync.com%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&tr=wss%3A%2F%2Ftracker.webtorrent.io';
+        var magnetURI = link;
         client.add(magnetURI, function ontorrent (torrent) {
             // Got torrent metadata!
             console.log('Client is downloading:', torrent.toString());
