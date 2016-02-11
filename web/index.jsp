@@ -61,9 +61,13 @@
         </div>
 
         <div class="body" style="margin-top:40px">
-            <div class="container" id="container" style="display: none">
+            <div class="container" id="container">
 
 
+                <img src="images/info.PNG" alt="Smiley face" height="auto" width="100%"  align="middle">
+                <img src="images/names.PNG" alt="Smiley face" height="auto" width="100%"  align="middle">
+                <img src="images/summary.PNG" alt="Smiley face" height="auto" width="100%"  align="middle">
+                <img src="images/logos.PNG" alt="Smiley face" height="auto" width="100%"  align="middle">
 
             </div>
         </div>
