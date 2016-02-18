@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Torrs Info Page</title>
+    <title>Torrs Stream Torrent</title>
 
     <link href="css/main.css" rel="stylesheet" type="text/css"/>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
@@ -13,10 +13,15 @@
 
     <!--// Javascript Online//-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
+    <script src="//cdn.torrents-time.com/torrentstime.min.js"></script>
+    <%--<script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>--%>
     <%--//Local Scripts--%>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/torrentsTimeFunctionality.js"></script>
+    <%--<script type="text/javascript" src="js/torrentstime.js"></script>--%>
+    <%--<script type="text/javascript" src="js/webtorrent.min.js"></script>--%>
+
 
 </head>
 <body style="background: linear-gradient(#eee, #4d4d4d);">
@@ -30,19 +35,17 @@
                 <nav class="navbar navbar-inverse">
                     <div class="container-fluid">
                         <div class="navbar-header">
-
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-
                             <a class="navbar-brand" href="index.jsp" style="
+                                /*width: 10%;*/
                                 text-align: center;
                                 font-size: xx-large !important;
                                 font-weight: 900;
                                 font-family: cursive;
-                                color: whitesmoke;
                             ">Torrs</a>
                         </div>
 
@@ -50,24 +53,55 @@
                             <ul class="nav navbar-nav navbar-nav-right" style="text-align: center; font-weight: bold; font-family: cursive; font-size: large;">
                                 <li><a href="streamWebTorrent.jsp"><span class="">Stream a WebTorrent</span></a></li>
                                 <li><a href="uploadWebTorrent.jsp"><span class="">Upload a WebTorrent</span></a></li>
-                                <li><a href="streamTorrent.jsp"><span class="">Stream a Torrent</span></a></li>
+                                <li><a href="streamTorrent.jsp"><span class="" style="color:whitesmoke">Stream a Torrent</span></a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
             </div>
 
+            <%--SEARCH BAR--%>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <h1 style="text-align: center; font-weight: bold; font-family: cursive;">
+                            Enter a Magnet URI for a Torrent file containing a video to stream it.
+                        </h1>
+                    </div>
+                </div>
+                <div class="col-lg-12" >
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="input" placeholder="Enter Magnet/Torrent ID"
+                               style="
+                                height: 40px;
+                                width: 80%;
+                                margin: auto;
+                                text-align: center;
+                                font-weight: bold;
+                                font-family: cursive;
+                                font-size: large;
+                                ">
+                    </div>
+                </div>
+                <div class="col-md-12" style="text-align: center;">
+                    <button type="submit" id="myStateButton" data-complete-text="Done..."
+                            class="btn btn-primary btn-lg streamVideo"
+                            autocomplete="off">
+                        Submit
+                    </button>
+                </div>
+            </div>
 
         </div>
 
-        <div class="body" style="margin-top:40px">
-            <div class="container" id="container">
+        <div class="body">
+            <div class="container" id="container" style="display: none">
 
-
-                <img src="images/info.PNG" alt="Smiley face" height="auto" width="100%"  align="middle">
-                <img src="images/names.PNG" alt="Smiley face" height="auto" width="100%"  align="middle">
-                <img src="images/summary.PNG" alt="Smiley face" height="auto" width="100%"  align="middle">
-                <img src="images/logos.PNG" alt="Smiley face" height="auto" width="100%"  align="middle">
+                <div class="VideoContainer" id="VideoContainer" style="text-align: center;font-weight: bold;font-family: cursive;font-size: large; height:500px">
+                    <%-- video will be put here from javascript ( in the following format ) --%>
+                    <%--<script>torrentsTime.init()/script>--%>
+                    <%--<div class="torrentsTime" id="torrentsTime" data-setup='{"source": "magnet:?xt=urn:btih:73A3E1F9492BA6B0FA5AFB95FEEBA59C001ABF62&dn=the+flash+2014+s02e13+hdtv+x264+lol+ettv&tr=udp%3A%2F%2Ftracker.publicbt.com%2Fannounce&tr=udp%3A%2F%2Fglotorrents.pw%3A6969%2Fannounce"}'></div>--%>
+                </div>
 
             </div>
         </div>
