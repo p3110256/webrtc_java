@@ -48,6 +48,7 @@ function seed(files) {
                 document.getElementById("file_name").innerHTML = file.name;
 
             });
+
             window.onbeforeunload = function (e) {
                 e = e || window.event;
                 // For IE and Firefox prior to version 4
