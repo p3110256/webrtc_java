@@ -1,8 +1,23 @@
 $(document).ready(function () {
     //Choosing File Logic
     $('#uploadfile').on('change', function (e) {
-        seed($(this).get(0).files)
+        console.log($(this).get(0).files);
+        console.log($(this).val());
+        seed($(this).get(0).files);
     });
+    var streaming = false;
+    //window.onbeforeunload = function (e) {
+    //    e = e || window.event;
+    //    // For IE and Firefox prior to version 4
+    //    if (e && streaming==true) {
+    //        e.returnValue = 'You are streaming right now. Are you sure you want to close the tab?';
+    //    }
+    //    // For Safari
+    //    if(streaming==true){
+    //        return 'You are streaming right now. Are you sure you want to close the tab?';
+    //    }
+    //};
+
 });
 
 function seed(files) {
@@ -13,14 +28,17 @@ function seed(files) {
     $('#overlay').css("display", "block");
 
     if (WebTorrent.WEBRTC_SUPPORT) {
+
         var client = new WebTorrent();
-        //alert("seeding ??");
+        console.log("client ok");
         client.seed(files, function onseed(torrent) {
+            console.log("client.seed ok");
             console.log('Client is seeding ' + torrent.infoHash)
             console.log('Client is seeding ' + torrent.name)
             console.log('Client is seeding ' + torrent.magnetURI)
 
             torrent.files.forEach(function (file) {
+                streaming=true;
                 // Display the file by appending it to the DOM. Supports video, audio, images, and
                 // more. Specify a container element (CSS selector or reference to DOM node).
                 //Append file to body and let themagic begin
@@ -30,6 +48,17 @@ function seed(files) {
                 document.getElementById("file_name").innerHTML = file.name;
 
             });
+            window.onbeforeunload = function (e) {
+                e = e || window.event;
+                // For IE and Firefox prior to version 4
+                if (e && streaming == true) {
+                    e.returnValue = 'You are streaming right now. Are you sure you want to close the tab?';
+                }
+                // For Safari
+                if (streaming == true) {
+                    return 'You are streaming right now. Are you sure you want to close the tab?';
+                }
+            };
             $('#file_size').text(humanFileSize(parseInt(torrent.length), true));
             $('#file_name').text(torrent.name);
             $('#videoMagnetURI').text(torrent.magnetURI);
