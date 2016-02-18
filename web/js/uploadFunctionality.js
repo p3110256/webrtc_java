@@ -19,6 +19,7 @@ function seed(files) {
             console.log('Client is seeding ' + torrent.infoHash)
             console.log('Client is seeding ' + torrent.name)
             console.log('Client is seeding ' + torrent.magnetURI)
+
             torrent.files.forEach(function (file) {
                 // Display the file by appending it to the DOM. Supports video, audio, images, and
                 // more. Specify a container element (CSS selector or reference to DOM node).

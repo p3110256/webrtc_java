@@ -13,13 +13,14 @@
 
     <!--// Javascript Online//-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
+    <script src="//cdn.torrents-time.com/torrentstime.min.js"></script>
+    <%--<script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>--%>
     <%--//Local Scripts--%>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/torrentsTimeFunctionality.js"></script>
     <%--<script type="text/javascript" src="js/torrentstime.js"></script>--%>
-    <script src="//cdn.torrents-time.com/torrentstime.min.js"></script>
+    <%--<script type="text/javascript" src="js/webtorrent.min.js"></script>--%>
 
 </head>
 <body style="background: linear-gradient(#eee, #4d4d4d);">

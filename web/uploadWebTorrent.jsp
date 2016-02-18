@@ -13,12 +13,13 @@
 
     <!--// Javascript Online//-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
+    <script src="http://css-tricks.com/examples/TextareaTricks/js/autoresize.jquery.min.js"></script>
+    <%--<script src="https://cdn.jsdelivrnet/webtorrent/latest/webtorrent.min.js"></script>--%>
     <%--//Local Scripts--%>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/uploadFunctionality.js"></script>
-    <script src="http://css-tricks.com/examples/TextareaTricks/js/autoresize.jquery.min.js"></script>
+    <script type="text/javascript" src="js/webtorrent.min.js"></script>
 
 
 </head>
@@ -70,7 +71,7 @@
                 </div>
                 <div class="col-md-12" style="text-align: center;">
                     <span class="btn btn-default btn-file">Choose a File
-                        <input type="file" id="uploadfile">
+                        <input type="file" name="upload" id="uploadfile" />
                     </span>
 
                     <div style="display: none; width:100%; margin:auto; margin-left:-40px" id="overlay"><img
